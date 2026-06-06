@@ -16,14 +16,26 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Toptal button — plays once on page load, settles after ~2s */
+/* Toptal card — border glow that plays once on load then fades */
 @keyframes toptal-attention {
-  0%   { box-shadow: 0 0 0px 0px rgba(99, 102, 241, 0); }
-  30%  { box-shadow: 0 0 16px 6px rgba(139, 92, 246, 0.7), 0 0 32px 12px rgba(99, 102, 241, 0.35); }
-  60%  { box-shadow: 0 0 20px 8px rgba(139, 92, 246, 0.5), 0 0 40px 16px rgba(99, 102, 241, 0.2); }
-  100% { box-shadow: 0 0 0px 0px rgba(99, 102, 241, 0); }
+  0%   {
+    box-shadow: 0 0 0px 0px rgba(99, 102, 241, 0);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
+  25%  {
+    box-shadow: 0 0 20px 4px rgba(139, 92, 246, 0.6), 0 0 40px 8px rgba(99, 102, 241, 0.25);
+    border-color: rgba(139, 92, 246, 0.9);
+  }
+  60%  {
+    box-shadow: 0 0 24px 6px rgba(139, 92, 246, 0.4), 0 0 48px 12px rgba(99, 102, 241, 0.15);
+    border-color: rgba(139, 92, 246, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0px 0px rgba(99, 102, 241, 0);
+    border-color: rgba(99, 102, 241, 0.3);
+  }
 }
 
 .toptal-btn-glow {
-  animation: toptal-attention 2s ease-out 0.3s 1 forwards;
+  animation: toptal-attention 2.2s ease-out 0.4s 1 forwards;
 }

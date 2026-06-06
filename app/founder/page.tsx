@@ -115,59 +115,41 @@ export default function FounderPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.15),_transparent_60%)] pointer-events-none" />
+      <section className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[560px]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(99,102,241,0.12),_transparent_55%)] pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-24">
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            {/* Profile photo — clean */}
-            <div className="shrink-0">
-              <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/founder_profile_pic.png"
-                  alt="Sandeep Amarnath"
-                  width={144}
-                  height={144}
-                  className="object-cover w-full h-full"
-                  priority
-                />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-stretch min-h-[560px]">
+
+            {/* Left — all content */}
+            <div className="flex-1 flex flex-col justify-center py-20 pr-0 lg:pr-16">
+
+              {/* Skill tags */}
+              <div className="flex flex-wrap gap-2 mb-7">
+                {["Technical Lead", "React / React Native", "Full-Stack", "Mobile Dev", "Freelancer"].map((tag) => (
+                  <span key={tag} className="text-xs font-medium text-indigo-300 border border-indigo-500/40 bg-indigo-500/10 px-3 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
               </div>
-            </div>
 
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 leading-tight tracking-tight">
                 Sandeep Amarnath
               </h1>
-              <p className="text-xl text-indigo-300 font-medium mb-3">
+              <p className="text-lg text-indigo-300 font-medium mb-4">
                 Technical Lead & Senior Full-Stack Developer · Founder, Staar Solutions
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-slate-400 text-sm mb-5">
+              <div className="flex flex-wrap items-center gap-4 text-slate-400 text-sm mb-7">
                 <span className="flex items-center gap-1.5">
-                  <MapPin size={14} className="text-indigo-400" /> Toronto, Canada · Working globally
+                  <MapPin size={13} className="text-indigo-400" /> Toronto, Canada · Working globally
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Briefcase size={14} className="text-indigo-400" /> 7+ years experience
+                  <Briefcase size={13} className="text-indigo-400" /> 7+ years experience
                 </span>
               </div>
 
-              {/* Toptal trust block — inline with content, clearly readable */}
-              <a
-                href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="toptal-btn-glow inline-flex items-center gap-3 mb-6 px-4 py-3 rounded-xl bg-indigo-950/60 border border-indigo-500/50 hover:border-indigo-400 hover:bg-indigo-900/60 transition-colors group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
-                  <Star size={14} className="fill-white text-white" />
-                </div>
-                <div className="text-left">
-                  <p className="text-white text-sm font-bold leading-tight">Accepted into Toptal's top 3% network</p>
-                  <p className="text-indigo-400 text-xs mt-0.5">Only 3 in 100 applicants pass · View my profile ↗</p>
-                </div>
-              </a>
-
-              <p className="text-slate-300 leading-relaxed max-w-2xl text-lg mb-8">
+              <p className="text-slate-400 leading-relaxed max-w-xl mb-8">
                 Senior Software Developer with 7+ years building scalable web and mobile applications using React, React Native, and modern JavaScript frameworks. Currently Technical Lead at Staples Canada and founder of Staar Solutions.
               </p>
 
@@ -196,6 +178,48 @@ export default function FounderPage() {
                 </a>
               </div>
             </div>
+
+            {/* Right — photo bleeding into bg + Toptal card below */}
+            <div className="hidden lg:flex flex-col items-center justify-end w-80 xl:w-96 shrink-0 relative">
+
+              {/* Photo — no border, fades into dark background */}
+              <div className="relative w-full">
+                <Image
+                  src="/images/founder_profile_pic.png"
+                  alt="Sandeep Amarnath"
+                  width={400}
+                  height={480}
+                  className="object-cover object-top w-full"
+                  style={{ height: "380px" }}
+                  priority
+                />
+                {/* Bottom fade — melts into hero bg */}
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f1628] via-[#0f1628]/70 to-transparent pointer-events-none" />
+                {/* Left fade — blends toward content */}
+                <div className="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-[#0f1628] to-transparent pointer-events-none" />
+              </div>
+
+              {/* Toptal card — snug below photo, feels attached */}
+              <a
+                href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="toptal-btn-glow w-full flex items-center gap-4 px-5 py-4 bg-slate-900/80 border border-indigo-500/30 hover:border-indigo-400/60 rounded-2xl transition-colors backdrop-blur-sm mb-8"
+              >
+                <Image
+                  src="/images/toptal_logo.svg"
+                  alt="Toptal"
+                  width={36}
+                  height={36}
+                  className="shrink-0 brightness-0 invert"
+                />
+                <div>
+                  <p className="text-white text-sm font-bold leading-tight">Verified Toptal Member</p>
+                  <p className="text-indigo-400 text-xs mt-0.5">Top 3% · Only 3 in 100 pass · View profile ↗</p>
+                </div>
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
