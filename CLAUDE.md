@@ -8,7 +8,7 @@ The site serves three purposes:
 2. Showcase of in-house apps and client work
 3. Founder/personal profile page (resume, Toptal, bio)
 
-Domain: **staarsolutions.com** · Deployed on Vercel
+Domain: **staarsolutions.ca** · Deployed on Vercel
 
 ## Tech stack
 
