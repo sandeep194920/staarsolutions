@@ -96,6 +96,24 @@ const RESUME_DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&i
 export default function FounderPage() {
   return (
     <>
+      {/* Toptal trust banner — first thing visitors see */}
+      <div className="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 py-3 px-6">
+        <a
+          href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-3 group"
+        >
+          <Star size={15} className="fill-white text-white shrink-0" />
+          <span className="text-white text-sm font-semibold">
+            Verified Toptal Member — Top 3% of global software developers
+          </span>
+          <span className="text-indigo-200 text-sm font-medium group-hover:text-white transition-colors flex items-center gap-1">
+            View my Toptal profile <ExternalLink size={13} />
+          </span>
+        </a>
+      </div>
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.15),_transparent_60%)] pointer-events-none" />
@@ -104,24 +122,27 @@ export default function FounderPage() {
           <div className="flex flex-col md:flex-row gap-12 items-start">
             {/* Profile photo */}
             <div className="shrink-0">
-              <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl ring-2 ring-indigo-500/30">
-                <Image
-                  src="/images/founder_profile_pic.png"
-                  alt="Sandeep Amarnath"
-                  width={144}
-                  height={144}
-                  className="object-cover w-full h-full"
-                  priority
-                />
+              {/* Toptal glow ring */}
+              <div className="p-1 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 shadow-2xl shadow-indigo-500/30">
+                <div className="w-36 h-36 rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/founder_profile_pic.png"
+                    alt="Sandeep Amarnath"
+                    width={144}
+                    height={144}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+              {/* Toptal badge under photo */}
+              <div className="mt-3 flex items-center justify-center gap-1.5 bg-indigo-500/20 border border-indigo-500/40 rounded-full px-3 py-1.5">
+                <Star size={11} className="fill-indigo-300 text-indigo-300" />
+                <span className="text-indigo-300 text-xs font-bold tracking-wide">TOP 3% TOPTAL</span>
               </div>
             </div>
 
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-4 uppercase tracking-wide">
-                <Star size={12} className="fill-indigo-400 text-indigo-400" />
-                Top 3% on Toptal
-              </div>
-
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
                 Sandeep Amarnath
               </h1>
@@ -161,7 +182,7 @@ export default function FounderPage() {
                   href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-indigo-500/60 text-indigo-300 text-sm font-semibold hover:bg-indigo-500/10 hover:text-white transition-colors"
                 >
                   Toptal Profile <ExternalLink size={14} />
                 </a>
