@@ -120,43 +120,21 @@ export default function FounderPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-24">
           <div className="flex flex-col md:flex-row gap-12 items-start">
-            {/* Profile photo */}
+            {/* Profile photo — clean, no ring */}
             <div className="shrink-0">
-              {/* Outer container — relative so badge and ring are anchored here */}
-              <div className="relative w-40 h-40">
-
-                {/* Spinning conic-gradient ring */}
-                <div
-                  className="animate-spin-slow absolute inset-0 rounded-2xl"
-                  style={{
-                    background:
-                      "conic-gradient(from 0deg, #6366f1, #8b5cf6, #c4b5fd, #ffffff60, #6366f1)",
-                    padding: "3px",
-                  }}
-                />
-
-                {/* Blurred glow copy behind */}
-                <div
-                  className="animate-spin-slow absolute inset-0 rounded-2xl opacity-40 blur-md"
-                  style={{
-                    background:
-                      "conic-gradient(from 0deg, #6366f1, #8b5cf6, #c4b5fd, #ffffff60, #6366f1)",
-                  }}
-                />
-
-                {/* Photo on top */}
-                <div className="absolute inset-[3px] rounded-xl overflow-hidden bg-slate-900 z-10">
+              <div className="relative w-36 h-36">
+                <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/founder_profile_pic.png"
                     alt="Sandeep Amarnath"
-                    width={154}
-                    height={154}
+                    width={144}
+                    height={144}
                     className="object-cover w-full h-full"
                     priority
                   />
                 </div>
 
-                {/* Corner badge pinned to bottom-right of photo */}
+                {/* Corner badge */}
                 <a
                   href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
                   target="_blank"
@@ -214,7 +192,7 @@ export default function FounderPage() {
                   href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-indigo-500/60 text-indigo-300 text-sm font-semibold hover:bg-indigo-500/10 hover:text-white transition-colors"
+                  className="toptal-btn-glow inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
                 >
                   Toptal Profile <ExternalLink size={14} />
                 </a>
