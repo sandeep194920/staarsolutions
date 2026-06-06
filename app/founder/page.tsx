@@ -122,24 +122,39 @@ export default function FounderPage() {
           <div className="flex flex-col md:flex-row gap-12 items-start">
             {/* Profile photo */}
             <div className="shrink-0">
-              {/* Toptal glow ring */}
-              <div className="p-1 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 shadow-2xl shadow-indigo-500/30">
-                <div className="w-36 h-36 rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/founder_profile_pic.png"
-                    alt="Sandeep Amarnath"
-                    width={144}
-                    height={144}
-                    className="object-cover w-full h-full"
-                    priority
-                  />
+              {/* Spinning ring wrapper */}
+              <div className="toptal-ring">
+                {/* Photo sits on top of the pseudo-elements */}
+                <div className="relative z-10 p-[3px] rounded-2xl bg-slate-900">
+                  <div className="w-36 h-36 rounded-xl overflow-hidden">
+                    <Image
+                      src="/images/founder_profile_pic.png"
+                      alt="Sandeep Amarnath"
+                      width={144}
+                      height={144}
+                      className="object-cover w-full h-full"
+                      priority
+                    />
+                  </div>
                 </div>
+
+                {/* Corner badge — pinned bottom-right of photo */}
+                <a
+                  href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View Toptal profile"
+                  className="absolute -bottom-3 -right-3 z-20 flex items-center gap-1 bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-[10px] font-black tracking-wider px-2.5 py-1.5 rounded-full shadow-lg shadow-indigo-500/50 border-2 border-slate-900"
+                >
+                  <Star size={10} className="fill-white text-white" />
+                  TOP 3%
+                </a>
               </div>
-              {/* Toptal badge under photo */}
-              <div className="mt-3 flex items-center justify-center gap-1.5 bg-indigo-500/20 border border-indigo-500/40 rounded-full px-3 py-1.5">
-                <Star size={11} className="fill-indigo-300 text-indigo-300" />
-                <span className="text-indigo-300 text-xs font-bold tracking-wide">TOP 3% TOPTAL</span>
-              </div>
+
+              {/* Toptal label under photo */}
+              <p className="mt-5 text-center text-xs text-slate-500 font-medium">
+                Toptal verified
+              </p>
             </div>
 
             <div>

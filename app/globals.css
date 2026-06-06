@@ -15,3 +15,52 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Spinning ring animation for Toptal photo */
+@keyframes spin-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.toptal-ring {
+  position: relative;
+  display: inline-block;
+}
+
+.toptal-ring::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 1rem; /* matches rounded-2xl */
+  background: conic-gradient(
+    from 0deg,
+    #6366f1,
+    #8b5cf6,
+    #a78bfa,
+    #c4b5fd,
+    #ffffff40,
+    #6366f1
+  );
+  animation: spin-ring 2.5s linear infinite;
+  z-index: 0;
+}
+
+.toptal-ring::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 1rem;
+  background: conic-gradient(
+    from 0deg,
+    #6366f1,
+    #8b5cf6,
+    #a78bfa,
+    #c4b5fd,
+    #ffffff40,
+    #6366f1
+  );
+  animation: spin-ring 2.5s linear infinite;
+  filter: blur(6px);
+  opacity: 0.5;
+  z-index: 0;
+}
