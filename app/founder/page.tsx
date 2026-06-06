@@ -122,37 +122,54 @@ export default function FounderPage() {
           <div className="flex flex-col md:flex-row gap-12 items-start">
             {/* Profile photo */}
             <div className="shrink-0">
-              {/* Spinning ring wrapper */}
-              <div className="toptal-ring">
-                {/* Photo sits on top of the pseudo-elements */}
-                <div className="relative z-10 p-[3px] rounded-2xl bg-slate-900">
-                  <div className="w-36 h-36 rounded-xl overflow-hidden">
-                    <Image
-                      src="/images/founder_profile_pic.png"
-                      alt="Sandeep Amarnath"
-                      width={144}
-                      height={144}
-                      className="object-cover w-full h-full"
-                      priority
-                    />
-                  </div>
+              {/* Outer container — relative so badge and ring are anchored here */}
+              <div className="relative w-40 h-40">
+
+                {/* Spinning conic-gradient ring */}
+                <div
+                  className="animate-spin-slow absolute inset-0 rounded-2xl"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, #6366f1, #8b5cf6, #c4b5fd, #ffffff60, #6366f1)",
+                    padding: "3px",
+                  }}
+                />
+
+                {/* Blurred glow copy behind */}
+                <div
+                  className="animate-spin-slow absolute inset-0 rounded-2xl opacity-40 blur-md"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, #6366f1, #8b5cf6, #c4b5fd, #ffffff60, #6366f1)",
+                  }}
+                />
+
+                {/* Photo on top */}
+                <div className="absolute inset-[3px] rounded-xl overflow-hidden bg-slate-900 z-10">
+                  <Image
+                    src="/images/founder_profile_pic.png"
+                    alt="Sandeep Amarnath"
+                    width={154}
+                    height={154}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
                 </div>
 
-                {/* Corner badge — pinned bottom-right of photo */}
+                {/* Corner badge pinned to bottom-right of photo */}
                 <a
                   href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="View Toptal profile"
-                  className="absolute -bottom-3 -right-3 z-20 flex items-center gap-1 bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-[10px] font-black tracking-wider px-2.5 py-1.5 rounded-full shadow-lg shadow-indigo-500/50 border-2 border-slate-900"
+                  className="absolute -bottom-2 -right-2 z-20 flex items-center gap-1 bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-[10px] font-black tracking-wider px-2.5 py-1.5 rounded-full shadow-lg shadow-indigo-500/40 border-2 border-slate-900"
                 >
                   <Star size={10} className="fill-white text-white" />
                   TOP 3%
                 </a>
               </div>
 
-              {/* Toptal label under photo */}
-              <p className="mt-5 text-center text-xs text-slate-500 font-medium">
+              <p className="mt-5 text-center text-xs text-slate-500 font-medium tracking-wide">
                 Toptal verified
               </p>
             </div>
