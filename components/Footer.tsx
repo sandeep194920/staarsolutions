@@ -13,7 +13,7 @@ const footerLinks: { [group: string]: FooterLink[] } = {
     { label: "Contact Us", href: "/contact", external: false },
     { label: "GitHub", href: "https://github.com/sandeep194920", external: true },
     { label: "LinkedIn", href: "https://linkedin.com/in/sandeepamarnath", external: true },
-    { label: "Toptal Profile", href: "https://www.toptal.com/resume/sandeep-amarnath", external: true },
+    { label: "Toptal Profile", href: "https://talent.toptal.com/resume/developers/sandeep-amarnath", external: true },
   ],
   Products: [
     { label: "FocusSharp", href: "https://focussharp.app", external: true },
