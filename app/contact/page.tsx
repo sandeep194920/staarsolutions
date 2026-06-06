@@ -86,7 +86,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-xs text-slate-400 font-medium">Based in</p>
-                    <p className="text-sm font-semibold text-slate-900">India · Working globally</p>
+                    <p className="text-sm font-semibold text-slate-900">Toronto, Canada · Working globally</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

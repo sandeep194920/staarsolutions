@@ -29,7 +29,6 @@ const apps = [
     tags: ["Web", "Next.js", "EdTech"],
     color: "from-indigo-500 to-purple-600",
     href: "/apps#codevizual",
-    live: "https://codevizual.com",
   },
   {
     name: "Thinky",
@@ -39,6 +38,15 @@ const apps = [
     tags: ["iOS", "Android", "React Native"],
     color: "from-amber-500 to-orange-500",
     href: "/apps#thinky",
+  },
+  {
+    name: "Cash Transaction Tracker",
+    tagline: "The ultimate ledger app for small businesses",
+    description:
+      "Track cash transactions, manage customer balances, and settle accounts — designed for small businesses tired of paper ledgers and spreadsheets.",
+    tags: ["iOS", "Android", "React Native"],
+    color: "from-emerald-500 to-teal-600",
+    href: "/apps#ctt",
   },
 ];
 
@@ -94,7 +102,7 @@ export default function Home() {
             <div className="flex-1 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-8 uppercase tracking-wide">
                 <Star size={12} className="fill-indigo-400 text-indigo-400" />
-                Software Studio · Top 3% on Toptal
+                Software Studio · Toptal Verified
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
@@ -160,9 +168,9 @@ export default function Home() {
                     <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center text-white text-sm font-black">C</div>
                     <div>
                       <p className="text-white text-sm font-semibold">CodeVizual</p>
-                      <p className="text-slate-500 text-xs">Web · codevizual.com</p>
+                      <p className="text-slate-500 text-xs">Web · Algorithm visualizer</p>
                     </div>
-                    <span className="ml-auto text-xs font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">Live</span>
+                    <span className="ml-auto text-xs font-semibold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full">Soon</span>
                   </div>
                   <div className="h-24 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-700/10 border border-indigo-500/20 flex items-center justify-center">
                     <p className="text-indigo-400/60 text-xs">Algorithm visualizations</p>
@@ -194,14 +202,14 @@ export default function Home() {
               <div className="absolute -top-4 -left-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
                 <span className="text-lg">🏆</span>
                 <div>
-                  <p className="text-xs font-bold text-slate-900">Top 3% on Toptal</p>
-                  <p className="text-xs text-slate-400">Verified quality</p>
+                  <p className="text-xs font-bold text-slate-900">Toptal Verified</p>
+                  <p className="text-xs text-slate-400">Top 3% globally</p>
                 </div>
               </div>
               <div className="absolute bottom-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
                 <span className="text-lg">🚀</span>
                 <div>
-                  <p className="text-xs font-bold text-slate-900">4 apps in production</p>
+                  <p className="text-xs font-bold text-slate-900">5 apps in the works</p>
                   <p className="text-xs text-slate-400">and counting</p>
                 </div>
               </div>
