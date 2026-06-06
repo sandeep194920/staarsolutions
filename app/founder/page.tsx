@@ -366,33 +366,85 @@ export default function FounderPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Toptal section */}
+      <section className="bg-slate-950 py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-4 uppercase tracking-wide">
+              <Star size={12} className="fill-indigo-400 text-indigo-400" />
+              Verified Member
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              I'm on Toptal — top 3% of global talent
+            </h2>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+              Toptal is the exclusive network for the world's top freelance talent. Only 3% of applicants pass their rigorous multi-stage screening. I did — and I'm actively available for engagements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Hire me card */}
+            <div className="bg-slate-900 border border-slate-700 rounded-2xl p-7 flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-4">
+                <Briefcase size={20} className="text-indigo-400" />
+              </div>
+              <p className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-2">For Companies</p>
+              <h3 className="text-xl font-bold text-white mb-2">Hire me via Toptal</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                Looking for a senior React, React Native, or full-stack developer? Hire me through Toptal for vetted, contract engagements. You get top-3% quality with Toptal's no-risk guarantee.
+              </p>
+              <a
+                href="https://www.toptal.com/ddZznJ/worlds-top-talent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-bold hover:opacity-90 transition-opacity"
+              >
+                Hire me on Toptal <ExternalLink size={14} />
+              </a>
+              <p className="text-xs text-slate-500 mt-3 text-center">
+                Using this link gives you $2,000 in Toptal credits
+              </p>
+            </div>
+
+            {/* Refer talent card */}
+            <div className="bg-slate-900 border border-slate-700 rounded-2xl p-7 flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center mb-4">
+                <Star size={20} className="text-violet-400" />
+              </div>
+              <p className="text-xs font-bold text-violet-400 uppercase tracking-widest mb-2">For Developers</p>
+              <h3 className="text-xl font-bold text-white mb-2">Apply to Toptal</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                Are you a developer, designer, or finance expert? Apply to join Toptal through my referral link and earn up to <strong className="text-white">$100 in rewards</strong> when you land your first job.
+              </p>
+              <a
+                href="https://www.toptal.com/talent/apply/ddZznJ/worlds-top-talent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-violet-500/50 text-violet-300 text-sm font-bold hover:bg-violet-500/10 transition-colors"
+              >
+                Apply via my referral <ExternalLink size={14} />
+              </a>
+              <p className="text-xs text-slate-500 mt-3 text-center">
+                Earn up to $100 when hired for your first job
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
       <section className="bg-gradient-to-br from-indigo-600 to-violet-700 py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-semibold mb-6">
-            <Star size={14} className="fill-white" />
-            Available for freelance via Toptal
-          </div>
-          <h2 className="text-3xl font-bold text-white mb-3">Let's work together</h2>
+          <h2 className="text-3xl font-bold text-white mb-3">Have a project in mind?</h2>
           <p className="text-indigo-200 text-lg mb-8">
-            Hire me through Toptal for senior-level engagements, or reach out directly to discuss a project with Staar Solutions.
+            Reach out directly to discuss a project with Staar Solutions — web apps, mobile apps, or both.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://www.toptal.com/resume/sandeep-amarnath"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-indigo-50 transition-colors"
-            >
-              Hire via Toptal <ExternalLink size={15} />
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-colors"
-            >
-              Contact directly
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-indigo-700 font-bold text-sm hover:bg-indigo-50 transition-colors"
+          >
+            Contact directly
+          </Link>
         </div>
       </section>
     </>
