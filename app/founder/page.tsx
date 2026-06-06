@@ -182,21 +182,20 @@ export default function FounderPage() {
             {/* Right — photo bleeding into bg + Toptal card below */}
             <div className="hidden lg:flex flex-col items-center justify-end w-80 xl:w-96 shrink-0 relative">
 
-              {/* Photo — no border, fades into dark background */}
-              <div className="relative w-full">
+              {/* Photo — transparent bg, contains naturally, fades at bottom */}
+              <div className="relative w-full flex justify-center">
                 <Image
                   src="/images/founder_profile_pic.png"
                   alt="Sandeep Amarnath"
-                  width={400}
-                  height={480}
-                  className="object-cover object-top w-full"
-                  style={{ height: "380px" }}
+                  width={380}
+                  height={380}
+                  className="object-contain w-full max-w-sm drop-shadow-2xl"
                   priority
                 />
-                {/* Bottom fade — melts into hero bg */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f1628] via-[#0f1628]/70 to-transparent pointer-events-none" />
-                {/* Left fade — blends toward content */}
-                <div className="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-[#0f1628] to-transparent pointer-events-none" />
+                {/* Bottom fade — melts feet/chest into hero bg */}
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d1225] via-[#0d1225]/60 to-transparent pointer-events-none" />
+                {/* Left edge fade */}
+                <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-[#0d1225] to-transparent pointer-events-none" />
               </div>
 
               {/* Toptal card — snug below photo, feels attached */}
