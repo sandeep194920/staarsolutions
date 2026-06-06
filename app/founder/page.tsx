@@ -90,8 +90,8 @@ const inHouseApps = [
 
 // TODO: Replace with your actual Google Drive embed/preview URL
 // Format: https://drive.google.com/file/d/YOUR_FILE_ID/preview
-const RESUME_DRIVE_EMBED_URL = "https://drive.google.com/file/d/YOUR_FILE_ID/preview";
-const RESUME_DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID";
+const RESUME_DRIVE_EMBED_URL = "https://drive.google.com/file/d/1pcL1czFgXxifgwwQL-W-Eo6O-ojyE24S/preview";
+const RESUME_DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1pcL1czFgXxifgwwQL-W-Eo6O-ojyE24S";
 
 export default function FounderPage() {
   return (
