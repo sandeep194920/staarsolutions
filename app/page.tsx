@@ -71,7 +71,7 @@ const services = [
 
 const stats = [
   { value: "4+", label: "In-house apps" },
-  { value: "5+", label: "Years building" },
+  { value: "7+", label: "Years building" },
   { value: "Top 3%", label: "Toptal rating" },
   { value: "2", label: "Client products shipped" },
 ];
@@ -80,54 +80,133 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/60 via-white to-violet-50/40 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-indigo-100/50 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden bg-slate-950">
+        {/* Background layers */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(99,102,241,0.25),transparent)] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-3xl pointer-events-none" />
+        {/* Subtle grid overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold mb-8 uppercase tracking-wide">
-              <Star size={12} className="fill-indigo-600 text-indigo-600" />
-              Software Studio · Top 3% on Toptal
-            </div>
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
 
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 leading-tight tracking-tight mb-6">
-              We build apps that{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                people actually use
-              </span>
-            </h1>
-
-            <p className="text-xl text-slate-500 leading-relaxed mb-10 max-w-2xl">
-              Staar Solutions is a software studio creating iOS, web, and cross-platform applications.
-              We ship in-house products and partner with clients to bring their ideas to life.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/apps"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
-              >
-                See Our Apps <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
-              >
-                Start a Project
-              </Link>
-            </div>
-          </div>
-
-          {/* Stats row */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-100">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl font-bold text-slate-900 mb-1">{stat.value}</div>
-                <div className="text-sm text-slate-500">{stat.label}</div>
+            {/* Left — copy */}
+            <div className="flex-1 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-8 uppercase tracking-wide">
+                <Star size={12} className="fill-indigo-400 text-indigo-400" />
+                Software Studio · Top 3% on Toptal
               </div>
-            ))}
+
+              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+                We build apps{" "}
+                <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                  people actually use
+                </span>
+              </h1>
+
+              <p className="text-lg text-slate-400 leading-relaxed mb-10">
+                Staar Solutions is a software studio creating iOS, web, and cross-platform applications.
+                We ship in-house products and partner with clients to bring their ideas to life.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-14">
+                <Link
+                  href="/apps"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+                >
+                  See Our Apps <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-700 text-slate-300 font-semibold text-sm hover:border-indigo-500 hover:text-white transition-colors"
+                >
+                  Start a Project
+                </Link>
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-slate-800">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-xs text-slate-500 uppercase tracking-wide">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — floating app cards */}
+            <div className="flex-1 w-full max-w-md relative hidden lg:block">
+              {/* Card stack */}
+              <div className="relative h-[420px]">
+                {/* Back card */}
+                <div className="absolute top-8 right-0 w-72 bg-slate-900 border border-slate-700 rounded-2xl p-5 shadow-2xl rotate-3">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white text-sm font-black">S</div>
+                    <div>
+                      <p className="text-white text-sm font-semibold">SaveNShare</p>
+                      <p className="text-slate-500 text-xs">iOS · Android</p>
+                    </div>
+                    <span className="ml-auto text-xs font-semibold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full">Dev</span>
+                  </div>
+                  <div className="h-24 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-600/10 border border-rose-500/20 flex items-center justify-center">
+                    <p className="text-rose-400/60 text-xs">Unified video playlists</p>
+                  </div>
+                </div>
+
+                {/* Middle card */}
+                <div className="absolute top-20 left-8 w-72 bg-slate-900 border border-slate-700 rounded-2xl p-5 shadow-2xl -rotate-2">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center text-white text-sm font-black">C</div>
+                    <div>
+                      <p className="text-white text-sm font-semibold">CodeVizual</p>
+                      <p className="text-slate-500 text-xs">Web · codevizual.com</p>
+                    </div>
+                    <span className="ml-auto text-xs font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">Live</span>
+                  </div>
+                  <div className="h-24 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-700/10 border border-violet-500/20 flex items-center justify-center">
+                    <p className="text-violet-400/60 text-xs">Algorithm visualizations</p>
+                  </div>
+                </div>
+
+                {/* Front card */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 bg-slate-800 border border-indigo-500/40 rounded-2xl p-5 shadow-2xl shadow-indigo-500/10">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-sm font-black">F</div>
+                    <div>
+                      <p className="text-white text-sm font-semibold">FocusSharp</p>
+                      <p className="text-slate-500 text-xs">Web · focussharp.app</p>
+                    </div>
+                    <span className="ml-auto text-xs font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">Live</span>
+                  </div>
+                  <div className="h-24 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 border border-blue-500/20 flex items-center justify-center">
+                    <p className="text-blue-400/60 text-xs">Focus timer & time tracker</p>
+                  </div>
+                  <div className="mt-3 flex gap-2">
+                    <div className="h-1.5 flex-1 rounded-full bg-indigo-500/40" />
+                    <div className="h-1.5 flex-[2] rounded-full bg-indigo-500" />
+                    <div className="h-1.5 flex-1 rounded-full bg-indigo-500/20" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating badges */}
+              <div className="absolute -top-4 -left-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
+                <span className="text-lg">🏆</span>
+                <div>
+                  <p className="text-xs font-bold text-slate-900">Top 3% on Toptal</p>
+                  <p className="text-xs text-slate-400">Verified quality</p>
+                </div>
+              </div>
+              <div className="absolute bottom-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
+                <span className="text-lg">🚀</span>
+                <div>
+                  <p className="text-xs font-bold text-slate-900">4 apps in production</p>
+                  <p className="text-xs text-slate-400">and counting</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

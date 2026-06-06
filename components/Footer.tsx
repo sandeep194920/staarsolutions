@@ -1,14 +1,16 @@
 import Link from "next/link";
 
-const footerLinks = {
+type FooterLink = { label: string; href: string; external: boolean };
+
+const footerLinks: { [group: string]: FooterLink[] } = {
   Company: [
-    { label: "Home", href: "/" },
-    { label: "Apps", href: "/apps" },
-    { label: "Clients", href: "/clients" },
-    { label: "Founder", href: "/founder" },
+    { label: "Home", href: "/", external: false },
+    { label: "Apps", href: "/apps", external: false },
+    { label: "Clients", href: "/clients", external: false },
+    { label: "Founder", href: "/founder", external: false },
   ],
   Connect: [
-    { label: "Contact Us", href: "/contact" },
+    { label: "Contact Us", href: "/contact", external: false },
     { label: "GitHub", href: "https://github.com/sandeep194920", external: true },
     { label: "LinkedIn", href: "https://linkedin.com/in/sandeepamarnath", external: true },
     { label: "Toptal Profile", href: "https://www.toptal.com/resume/sandeep-amarnath", external: true },
@@ -38,7 +40,7 @@ export default function Footer() {
               Building high-quality iOS, web, and cross-platform applications.
             </p>
             <p className="text-sm mt-4 text-slate-500">
-              📍 Based in India · Working globally
+              📍 Toronto, Canada · Working globally
             </p>
           </div>
 
@@ -51,7 +53,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    {"external" in link && link.external ? (
+                    {link.external ? (
                       <a
                         href={link.href}
                         target="_blank"

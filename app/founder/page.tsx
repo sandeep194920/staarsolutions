@@ -1,42 +1,83 @@
 import Link from "next/link";
-import { ExternalLink, Download, MapPin, Briefcase, Star, Code2, Smartphone, Globe } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, Download, MapPin, Briefcase, Star, Code2, Smartphone, Globe, GraduationCap } from "lucide-react";
 
 const skills = {
-  Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-  Mobile: ["React Native", "Expo", "NativeWind", "Swift (learning)", "SwiftUI (learning)"],
-  Backend: ["Node.js", "Supabase", "PostgreSQL", "REST APIs", "Edge Functions"],
-  Tools: ["Git", "Figma", "Vercel", "Xcode", "VS Code"],
+  "Frontend & Mobile": [
+    "React", "React Native", "Next.js", "TypeScript",
+    "Redux", "Zustand", "Context API", "React Query",
+    "Tailwind CSS", "Styled Components", "NativeWind",
+  ],
+  "Backend & APIs": [
+    "Node.js", "Express", "NestJS",
+    "REST APIs", "GraphQL",
+    "Supabase", "PostgreSQL", "MongoDB", "Oracle",
+  ],
+  "Cloud & DevOps": [
+    "AWS (S3, CloudFront, Amplify)",
+    "CI/CD Pipelines",
+    "Vercel", "EAS (Expo)",
+  ],
+  "Testing & Tools": [
+    "Cypress", "Playwright", "React Testing Library",
+    "Shopify (Liquid, Storefront API)",
+    "Algolia", "Contentful",
+    "Figma", "Git", "Xcode",
+  ],
 };
 
 const experience = [
   {
-    role: "Freelance Software Developer",
-    company: "Toptal Network",
-    period: "2024 – Present",
-    type: "Freelance",
-    desc: "Selected into Toptal's top 3% network of global software developers. Available for senior-level full-stack and mobile development engagements.",
-    highlight: true,
-  },
-  {
-    role: "Founder & Lead Developer",
-    company: "Staar Solutions",
-    period: "2023 – Present",
+    role: "Technical Lead",
+    company: "Staples Canada",
+    location: "Richmond Hill, ON, Canada",
+    period: "Feb 2026 – Present",
     type: "Full-time",
-    desc: "Building in-house products (FocusSharp, SaveNShare, CodeVizual, Thinky) and delivering client projects end-to-end.",
+    highlight: true,
+    bullets: [
+      "Lead frontend development for staples.ca homepage, PLP, and PDP within a React/Shopify architecture, managing integrations across Algolia, Akeneo PIM, and Shopify Storefront API serving millions of Canadian customers.",
+      "Manage a cross-functional team of 4 developers — conducting code reviews, sprint planning, and technical feasibility assessments.",
+      "Orchestrating Bootstrap 4→5 migration to meet compliance requirements, building a comprehensive UI test suite from scratch.",
+      "Resolved a critical production incident — duplicate SKU issue that uncovered $40K in lost revenue — within first two weeks of role.",
+    ],
   },
   {
-    role: "Full-Stack Developer",
-    company: "Zenorbis Technologies (Client)",
-    period: "2024",
-    type: "Project",
-    desc: "Designed and built the full company website for an engineering and IT services firm serving aerospace, automotive, and healthcare industries.",
+    role: "Senior Software Developer",
+    company: "Quartermaster",
+    location: "Toronto, ON, Canada",
+    period: "Apr 2024 – Oct 2025",
+    type: "Full-time",
+    bullets: [
+      "Led frontend migration of a React–Angular web app into a modern React architecture, reducing page load times by ~30%.",
+      "Developed chat features for Homeowners and Pros using Stream Chat; implemented AI-driven requirement collection and project summaries.",
+      "Built and maintained React Native apps for Homeowners and Pros, managing mobile app development independently.",
+      "Deployed frontend builds to AWS S3/CloudFront; created reusable components with Storybook following a11y best practices.",
+    ],
   },
   {
-    role: "Full-Stack Developer",
-    company: "Cyntronex (Client)",
-    period: "2024",
-    type: "Project",
-    desc: "Built the product and services website for an engineering company specialising in product design, manufacturing, and advanced automation.",
+    role: "Software Engineer",
+    company: "OANDA Corporation",
+    location: "Toronto, ON, Canada",
+    period: "Dec 2021 – Jan 2024",
+    type: "Full-time",
+    bullets: [
+      "Built OANDA's user onboarding app with React and state machines, handling complex navigation across multiple countries and divisions.",
+      "Implemented i18n supporting 18 languages and WCAG-compliant accessibility with keyboard navigation and screen reader support.",
+      "Built dynamic workflows handling 100+ country-specific document submissions with robust Cypress end-to-end tests.",
+      "Led development of a React Native mobile app for user consent management; mentored a team of 5 interns.",
+    ],
+  },
+  {
+    role: "Associate Software Developer",
+    company: "Mackenzie Investments",
+    location: "Toronto, ON, Canada",
+    period: "Mar 2019 – Dec 2021",
+    type: "Full-time",
+    bullets: [
+      "Built a performant ReactJS application to replace the legacy frontend of an internal tool, improving usability across multiple teams.",
+      "Led implementation of a scalable email-sending service with Node.js and SendGrid — driving 25% improvement in campaign conversions.",
+      "Engineered a high-performance app with Node.js, Express, and Oracle — reducing query time per user by 6–8 minutes.",
+    ],
   },
 ];
 
@@ -47,6 +88,11 @@ const inHouseApps = [
   { name: "Thinky", desc: "Curated riddle app", href: "/apps#thinky" },
 ];
 
+// TODO: Replace with your actual Google Drive embed/preview URL
+// Format: https://drive.google.com/file/d/YOUR_FILE_ID/preview
+const RESUME_DRIVE_EMBED_URL = "https://drive.google.com/file/d/YOUR_FILE_ID/preview";
+const RESUME_DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID";
+
 export default function FounderPage() {
   return (
     <>
@@ -56,12 +102,18 @@ export default function FounderPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-24">
           <div className="flex flex-col md:flex-row gap-12 items-start">
-            {/* Avatar placeholder */}
+            {/* Profile photo */}
             <div className="shrink-0">
-              <div className="w-36 h-36 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white text-5xl font-black shadow-2xl">
-                S
+              <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl ring-2 ring-indigo-500/30">
+                <Image
+                  src="/images/founder_profile_pic.png"
+                  alt="Sandeep Amarnath"
+                  width={144}
+                  height={144}
+                  className="object-cover w-full h-full"
+                  priority
+                />
               </div>
-              <p className="text-slate-500 text-xs mt-3 text-center">Photo coming soon</p>
             </div>
 
             <div>
@@ -74,29 +126,36 @@ export default function FounderPage() {
                 Sandeep Amarnath
               </h1>
               <p className="text-xl text-indigo-300 font-medium mb-4">
-                Full-Stack & Mobile Developer · Founder, Staar Solutions
+                Technical Lead & Senior Full-Stack Developer · Founder, Staar Solutions
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-slate-400 text-sm mb-6">
                 <span className="flex items-center gap-1.5">
-                  <MapPin size={14} className="text-indigo-400" /> India · Working globally
+                  <MapPin size={14} className="text-indigo-400" /> Toronto, Canada · Working globally
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Briefcase size={14} className="text-indigo-400" /> 5+ years experience
+                  <Briefcase size={14} className="text-indigo-400" /> 7+ years experience
                 </span>
               </div>
 
               <p className="text-slate-300 leading-relaxed max-w-2xl text-lg mb-8">
-                I'm a full-stack and mobile developer who builds apps from zero to production. I founded Staar Solutions to ship in-house products and take on client work. I was accepted into Toptal's network — where only the top 3% of applicants pass — and I'm actively available for senior freelance engagements.
+                Senior Software Developer with 7+ years building scalable web and mobile applications using React, React Native, and modern JavaScript frameworks. Currently Technical Lead at Staples Canada, and founder of Staar Solutions. Accepted into Toptal's top 3% network.
               </p>
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="/sandeep-amarnath-resume.pdf"
-                  download
+                  href={RESUME_DRIVE_DOWNLOAD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
                   <Download size={15} /> Download Resume
+                </a>
+                <a
+                  href="#resume-preview"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
+                >
+                  View Resume ↓
                 </a>
                 <a
                   href="https://www.toptal.com/resume/sandeep-amarnath"
@@ -104,7 +163,7 @@ export default function FounderPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
                 >
-                  View Toptal Profile <ExternalLink size={14} />
+                  Toptal Profile <ExternalLink size={14} />
                 </a>
                 <a
                   href="https://github.com/sandeep194920"
@@ -128,16 +187,16 @@ export default function FounderPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">The story</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed">
               <p>
-                I started my career as a full-stack web developer, building production applications in React, Node.js, and PostgreSQL. Over the years I've worked across the entire stack — from building pixel-perfect UIs to architecting backend systems and deploying to production.
+                I'm a Senior Software Developer with 7+ years of experience building production web and mobile applications. My career spans fintech (OANDA, Mackenzie Investments), marketplaces (Quartermaster), and large-scale e-commerce (Staples Canada), where I currently serve as Technical Lead.
               </p>
               <p>
-                I founded <strong className="text-slate-900">Staar Solutions</strong> to pursue something I've always wanted: building products that solve real problems. The studio lets me ship in-house apps while also taking on client projects — two things I genuinely love doing.
+                My strength is full-stack React — from complex state management and multi-country i18n flows to AWS deployments and CI/CD pipelines. On mobile, I've independently built and shipped React Native apps for both iOS and Android across several companies.
               </p>
               <p>
-                In 2024 I was accepted into <strong className="text-slate-900">Toptal</strong>, the exclusive network for the top 3% of global tech talent. The multi-stage screening process (test, live coding, technical interview, live project) confirmed what I'd spent years working toward: I can compete with the best engineers in the world.
+                I founded <strong className="text-slate-900">Staar Solutions</strong> to build products I'd actually use, and to take on client work where I can own the outcome end-to-end. In 2024 I was accepted into <strong className="text-slate-900">Toptal's top 3% network</strong> — the multi-stage process (logic test, live coding, technical interview, live project) is the most rigorous screening I've been through, and passing it was a meaningful benchmark.
               </p>
               <p>
-                I'm currently expanding into iOS and macOS development with Swift and SwiftUI — building native companions to the web apps I've already shipped.
+                I hold a <strong className="text-slate-900">Master of Engineering in Computer Networking</strong> from Dalhousie University, where I also served as a Teaching Assistant in Python.
               </p>
             </div>
           </div>
@@ -154,10 +213,10 @@ export default function FounderPage() {
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="bg-white rounded-2xl p-6 border border-slate-100">
                 <div className="flex items-center gap-2 mb-4">
-                  {category === "Frontend" && <Globe size={16} className="text-indigo-600" />}
-                  {category === "Mobile" && <Smartphone size={16} className="text-violet-600" />}
-                  {category === "Backend" && <Code2 size={16} className="text-emerald-600" />}
-                  {category === "Tools" && <Briefcase size={16} className="text-amber-600" />}
+                  {category.includes("Frontend") && <Globe size={16} className="text-indigo-600" />}
+                  {category.includes("Backend") && <Code2 size={16} className="text-emerald-600" />}
+                  {category.includes("Cloud") && <Smartphone size={16} className="text-violet-600" />}
+                  {category.includes("Testing") && <Briefcase size={16} className="text-amber-600" />}
                   <h3 className="font-semibold text-slate-900 text-sm">{category}</h3>
                 </div>
                 <ul className="space-y-2">
@@ -180,40 +239,103 @@ export default function FounderPage() {
           <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4">Experience</p>
           <h2 className="text-3xl font-bold text-slate-900 mb-10">Work history</h2>
 
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-5 max-w-3xl">
             {experience.map((job) => (
               <div
                 key={job.company + job.role}
-                className={`rounded-2xl p-6 border ${job.highlight ? "border-indigo-200 bg-indigo-50/50" : "border-slate-100 bg-white"}`}
+                className={`rounded-2xl p-6 border ${job.highlight ? "border-indigo-200 bg-indigo-50/60" : "border-slate-100 bg-white"}`}
               >
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                   <div>
-                    <h3 className="font-bold text-slate-900">{job.role}</h3>
-                    <p className={`text-sm font-medium ${job.highlight ? "text-indigo-600" : "text-slate-500"}`}>
+                    <h3 className="font-bold text-slate-900 text-base">{job.role}</h3>
+                    <p className={`text-sm font-semibold ${job.highlight ? "text-indigo-600" : "text-slate-600"}`}>
                       {job.company}
                     </p>
+                    <p className="text-xs text-slate-400 mt-0.5">{job.location}</p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 shrink-0">
                     <span className="text-xs text-slate-400">{job.period}</span>
                     <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
                       job.type === "Freelance" ? "bg-indigo-100 text-indigo-700" :
-                      job.type === "Full-time" ? "bg-emerald-100 text-emerald-700" :
-                      "bg-slate-100 text-slate-600"
+                      "bg-emerald-100 text-emerald-700"
                     }`}>
                       {job.type}
                     </span>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500 leading-relaxed">{job.desc}</p>
+                <ul className="space-y-1.5">
+                  {job.bullets.map((b, i) => (
+                    <li key={i} className="text-sm text-slate-500 leading-relaxed flex items-start gap-2">
+                      <span className="mt-2 w-1 h-1 rounded-full bg-slate-300 shrink-0" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
                 {job.highlight && (
                   <div className="mt-3 flex items-center gap-2 text-indigo-600 text-xs font-semibold">
                     <Star size={12} className="fill-indigo-600" />
-                    Top 3% of global applicants
+                    Currently serving as Technical Lead
                   </div>
                 )}
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="bg-slate-50 py-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4">Education</p>
+          <div className="max-w-3xl bg-white rounded-2xl p-6 border border-slate-100 flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+              <GraduationCap size={20} className="text-indigo-600" />
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900">Master of Engineering, Computer Networking</h3>
+              <p className="text-sm font-medium text-indigo-600">Dalhousie University</p>
+              <p className="text-xs text-slate-400 mb-2">Jan 2017 – Jul 2018 · Halifax, NS, Canada</p>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                Advanced Python coursework, distributed file-sharing system design, Twitter bot project. Served as Teaching Assistant mentoring students in Python programming.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resume inline preview */}
+      <section id="resume-preview" className="bg-white py-16 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-1">Resume</p>
+              <h2 className="text-2xl font-bold text-slate-900">View full resume</h2>
+            </div>
+            <a
+              href={RESUME_DRIVE_DOWNLOAD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+            >
+              <Download size={15} /> Download PDF
+            </a>
+          </div>
+
+          {/* Google Drive embed */}
+          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm" style={{ height: "900px" }}>
+            <iframe
+              src={RESUME_DRIVE_EMBED_URL}
+              className="w-full h-full"
+              allow="autoplay"
+              title="Sandeep Amarnath Resume"
+            />
+          </div>
+          <p className="text-xs text-slate-400 mt-3 text-center">
+            Can't see the PDF?{" "}
+            <a href={RESUME_DRIVE_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:underline">
+              Download it directly
+            </a>
+          </p>
         </div>
       </section>
 
@@ -244,7 +366,7 @@ export default function FounderPage() {
         </div>
       </section>
 
-      {/* Toptal badge + contact CTA */}
+      {/* CTA */}
       <section className="bg-gradient-to-br from-indigo-600 to-violet-700 py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-semibold mb-6">
