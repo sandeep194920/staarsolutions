@@ -27,7 +27,7 @@ const apps = [
     description:
       "Interactive algorithm visualizations for FAANG interview prep. Step-by-step code mapping with real-time variable tracking.",
     tags: ["Web", "Next.js", "EdTech"],
-    color: "from-violet-500 to-purple-600",
+    color: "from-indigo-500 to-purple-600",
     href: "/apps#codevizual",
     live: "https://codevizual.com",
   },
@@ -99,7 +99,7 @@ export default function Home() {
 
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
                 We build apps{" "}
-                <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-indigo-400 to-indigo-400 bg-clip-text text-transparent">
                   people actually use
                 </span>
               </h1>
@@ -112,7 +112,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-14">
                 <Link
                   href="/apps"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
                 >
                   See Our Apps <ArrowRight size={16} />
                 </Link>
@@ -157,15 +157,15 @@ export default function Home() {
                 {/* Middle card */}
                 <div className="absolute top-20 left-8 w-72 bg-slate-900 border border-slate-700 rounded-2xl p-5 shadow-2xl -rotate-2">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center text-white text-sm font-black">C</div>
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center text-white text-sm font-black">C</div>
                     <div>
                       <p className="text-white text-sm font-semibold">CodeVizual</p>
                       <p className="text-slate-500 text-xs">Web · codevizual.com</p>
                     </div>
                     <span className="ml-auto text-xs font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">Live</span>
                   </div>
-                  <div className="h-24 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-700/10 border border-violet-500/20 flex items-center justify-center">
-                    <p className="text-violet-400/60 text-xs">Algorithm visualizations</p>
+                  <div className="h-24 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-700/10 border border-indigo-500/20 flex items-center justify-center">
+                    <p className="text-indigo-400/60 text-xs">Algorithm visualizations</p>
                   </div>
                 </div>
 
@@ -378,7 +378,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-indigo-600 to-violet-700 py-20">
+      <section className="bg-gradient-to-br from-indigo-600 to-indigo-700 py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Users size={40} className="text-white/60 mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

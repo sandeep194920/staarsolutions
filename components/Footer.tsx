@@ -12,7 +12,7 @@ const footerLinks: { [group: string]: FooterLink[] } = {
   Connect: [
     { label: "Contact Us", href: "/contact", external: false },
     { label: "GitHub", href: "https://github.com/sandeep194920", external: true },
-    { label: "LinkedIn", href: "https://linkedin.com/in/sandeepamarnath", external: true },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/sandeepamarnath/", external: true },
     { label: "Toptal Profile", href: "https://talent.toptal.com/resume/developers/sandeep-amarnath", external: true },
   ],
   Products: [
@@ -30,11 +30,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shrink-0">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" fill="white" fillOpacity="0.95"/>
+                </svg>
               </div>
-              <span className="font-semibold text-white">Staar Solutions</span>
+              <div>
+                <span className="block font-bold text-white leading-tight">Staar Solutions</span>
+                <span className="block text-[10px] text-slate-500 leading-tight tracking-wide">Crafting software that stands out.</span>
+              </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-500">
               Building high-quality iOS, web, and cross-platform applications.

@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Download, MapPin, Briefcase, Star, Code2, Smartphone, Globe, GraduationCap } from "lucide-react";
+import { ExternalLink, MapPin, Briefcase, Star, Code2, Smartphone, Globe, GraduationCap } from "lucide-react";
 
 const skills = {
+  "Languages": [
+    "JavaScript", "TypeScript", "HTML", "CSS",
+    "Python", "SQL",
+  ],
   "Frontend & Mobile": [
-    "React", "React Native", "Next.js", "TypeScript",
+    "React", "React Native", "Next.js",
     "Redux", "Zustand", "Context API", "React Query",
     "Tailwind CSS", "Styled Components", "NativeWind",
   ],
@@ -13,16 +17,13 @@ const skills = {
     "REST APIs", "GraphQL",
     "Supabase", "PostgreSQL", "MongoDB", "Oracle",
   ],
-  "Cloud & DevOps": [
-    "AWS (S3, CloudFront, Amplify)",
+  "Tools & Platforms": [
+    "Git", "Xcode", "Figma", "Storybook",
+    "AWS (S3, CloudFront, Amplify)", "Vercel", "EAS (Expo)",
     "CI/CD Pipelines",
-    "Vercel", "EAS (Expo)",
-  ],
-  "Testing & Tools": [
-    "Cypress", "Playwright", "React Testing Library",
     "Shopify (Liquid, Storefront API)",
     "Algolia", "Contentful",
-    "Figma", "Git", "Xcode",
+    "Cypress", "Playwright", "React Testing Library",
   ],
 };
 
@@ -116,7 +117,7 @@ export default function FounderPage() {
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden min-h-[560px]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(99,102,241,0.12),_transparent_55%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(139,92,246,0.12),_transparent_55%)] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row items-stretch min-h-[560px]">
@@ -131,6 +132,21 @@ export default function FounderPage() {
                     {tag}
                   </span>
                 ))}
+              </div>
+
+              {/* Mobile-only circular photo */}
+              <div className="lg:hidden mb-6">
+                <div className="w-24 h-24 rounded-full overflow-hidden"
+                  style={{ boxShadow: "0 0 0 2px rgba(99,102,241,0.3), 0 4px 20px rgba(0,0,0,0.4)" }}>
+                  <Image
+                    src="/images/founder_profile_pic.png"
+                    alt="Sandeep Amarnath"
+                    width={96}
+                    height={96}
+                    className="object-cover w-full h-full"
+                    style={{ objectPosition: "center 15%" }}
+                  />
+                </div>
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-3 leading-tight tracking-tight">
@@ -155,18 +171,18 @@ export default function FounderPage() {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href={RESUME_DRIVE_DOWNLOAD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#resume-preview"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
-                  <Download size={15} /> Download Resume
+                  View Resume ↓
                 </a>
                 <a
-                  href="#resume-preview"
+                  href="https://www.linkedin.com/in/sandeepamarnath/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
                 >
-                  View Resume ↓
+                  LinkedIn <ExternalLink size={14} />
                 </a>
                 <a
                   href="https://github.com/sandeep194920"
@@ -176,55 +192,81 @@ export default function FounderPage() {
                 >
                   GitHub <ExternalLink size={14} />
                 </a>
+                <a
+                  href="https://stackoverflow.com/users/10824697/sandeep-amarnath"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
+                >
+                  Stack Overflow <ExternalLink size={14} />
+                </a>
               </div>
             </div>
 
-            {/* Right — photo dissolving into bg + Toptal below */}
-            <div className="hidden lg:flex flex-col items-center justify-end w-96 xl:w-[440px] shrink-0">
+            {/* Right — photo + Toptal below */}
+            <div className="hidden lg:flex flex-col items-center justify-center w-80 xl:w-[360px] shrink-0 py-10">
 
-              {/* Photo with fades on all 4 edges */}
-              <div className="relative w-full flex justify-center">
-                <Image
-                  src="/images/founder_profile_pic.png"
-                  alt="Sandeep Amarnath"
-                  width={440}
-                  height={440}
-                  className="object-contain w-full"
-                  priority
-                />
-                {/* Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#0d1225] via-[#0d1225]/50 to-transparent pointer-events-none" />
-                {/* Top */}
-                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#0d1225] to-transparent pointer-events-none" />
-                {/* Left */}
-                <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-[#0d1225] to-transparent pointer-events-none" />
-                {/* Right */}
-                <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-[#0d1225] to-transparent pointer-events-none" />
-              </div>
+              {/* Photo — raw transparent PNG, no effects */}
+              <Image
+                src="/images/founder_profile_pic.png"
+                alt="Sandeep Amarnath"
+                width={360}
+                height={440}
+                className="object-contain w-full"
+                priority
+              />
 
-              {/* Toptal — no border, just logo + text, feels like a caption */}
+              {/* Gap + Toptal — sits cleanly below photo, centered */}
               <a
                 href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="toptal-btn-glow flex items-center gap-3 mb-10 group hover:opacity-80 transition-opacity"
+                className="toptal-btn-glow flex items-center gap-3 mt-4 mb-4 px-4 py-3 rounded-xl group hover:opacity-80 transition-opacity"
               >
                 <Image
                   src="/images/toptal_logo.svg"
                   alt="Toptal"
-                  width={28}
-                  height={28}
-                  className="shrink-0 brightness-0 invert opacity-70"
+                  width={26}
+                  height={26}
+                  className="shrink-0 brightness-0 invert opacity-80"
                 />
                 <div>
-                  <p className="text-slate-300 text-sm font-semibold leading-tight group-hover:text-white transition-colors">
+                  <p className="text-slate-300 text-sm font-semibold group-hover:text-white transition-colors">
                     Verified Toptal Member
                   </p>
-                  <p className="text-indigo-400 text-xs mt-0.5">Top 3% · Only 3 in 100 pass ↗</p>
+                  <p className="text-indigo-300 text-xs mt-0.5">Top 3% · Only 3 in 100 pass ↗</p>
                 </div>
               </a>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Stats bar */}
+      <section className="bg-slate-900 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8">
+          <div className="flex flex-wrap gap-8 lg:gap-16">
+            <div>
+              <p className="text-2xl font-bold text-white">7,168</p>
+              <p className="text-slate-400 text-sm mt-0.5">Stack Overflow reputation</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">7.4M+</p>
+              <p className="text-slate-400 text-sm mt-0.5">Developers reached</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">103</p>
+              <p className="text-slate-400 text-sm mt-0.5">Answers written</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">7+</p>
+              <p className="text-slate-400 text-sm mt-0.5">Years of experience</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-white">Top 3%</p>
+              <p className="text-slate-400 text-sm mt-0.5">Toptal network</p>
+            </div>
           </div>
         </div>
       </section>
@@ -243,7 +285,7 @@ export default function FounderPage() {
                 My strength is full-stack React — from complex state management and multi-country i18n flows to AWS deployments and CI/CD pipelines. On mobile, I've independently built and shipped React Native apps for both iOS and Android across several companies.
               </p>
               <p>
-                I founded <strong className="text-slate-900">Staar Solutions</strong> to build products I'd actually use, and to take on client work where I can own the outcome end-to-end. In 2024 I was accepted into <strong className="text-slate-900">Toptal's top 3% network</strong> — the multi-stage process (logic test, live coding, technical interview, live project) is the most rigorous screening I've been through, and passing it was a meaningful benchmark.
+                I founded <strong className="text-slate-900">Staar Solutions</strong> to build products I'd actually use, and to take on client work where I can own the outcome end-to-end. In 2026 I was accepted into <strong className="text-slate-900">Toptal's top 3% network</strong> — the multi-stage process (logic test, live coding, technical interview, live project) is the most rigorous screening I've been through, and passing it was a meaningful benchmark.
               </p>
               <p>
                 I hold a <strong className="text-slate-900">Master of Engineering in Computer Networking</strong> from Dalhousie University, where I also served as a Teaching Assistant in Python.
@@ -263,10 +305,10 @@ export default function FounderPage() {
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="bg-white rounded-2xl p-6 border border-slate-100">
                 <div className="flex items-center gap-2 mb-4">
-                  {category.includes("Frontend") && <Globe size={16} className="text-indigo-600" />}
-                  {category.includes("Backend") && <Code2 size={16} className="text-emerald-600" />}
-                  {category.includes("Cloud") && <Smartphone size={16} className="text-violet-600" />}
-                  {category.includes("Testing") && <Briefcase size={16} className="text-amber-600" />}
+                  {category.includes("Languages") && <Code2 size={16} className="text-indigo-600" />}
+                  {category.includes("Frontend") && <Globe size={16} className="text-violet-600" />}
+                  {category.includes("Backend") && <Smartphone size={16} className="text-emerald-600" />}
+                  {category.includes("Tools") && <Briefcase size={16} className="text-amber-600" />}
                   <h3 className="font-semibold text-slate-900 text-sm">{category}</h3>
                 </div>
                 <ul className="space-y-2">
@@ -365,9 +407,9 @@ export default function FounderPage() {
               href={RESUME_DRIVE_DOWNLOAD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
             >
-              <Download size={15} /> Download PDF
+↓ Download PDF
             </a>
           </div>
 
@@ -447,7 +489,7 @@ export default function FounderPage() {
                 href="https://www.toptal.com/ddZznJ/worlds-top-talent"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-bold hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-600 text-white text-sm font-bold hover:opacity-90 transition-opacity"
               >
                 Hire me on Toptal <ExternalLink size={14} />
               </a>
@@ -458,10 +500,10 @@ export default function FounderPage() {
 
             {/* Refer talent card */}
             <div className="bg-slate-900 border border-slate-700 rounded-2xl p-7 flex flex-col">
-              <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center mb-4">
-                <Star size={20} className="text-violet-400" />
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-4">
+                <Star size={20} className="text-indigo-400" />
               </div>
-              <p className="text-xs font-bold text-violet-400 uppercase tracking-widest mb-2">For Developers</p>
+              <p className="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-2">For Developers</p>
               <h3 className="text-xl font-bold text-white mb-2">Apply to Toptal</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">
                 Are you a developer, designer, or finance expert? Apply to join Toptal through my referral link and earn up to <strong className="text-white">$100 in rewards</strong> when you land your first job.
@@ -470,7 +512,7 @@ export default function FounderPage() {
                 href="https://www.toptal.com/talent/apply/ddZznJ/worlds-top-talent"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-violet-500/50 text-violet-300 text-sm font-bold hover:bg-violet-500/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-indigo-500/50 text-indigo-300 text-sm font-bold hover:bg-indigo-500/10 transition-colors"
               >
                 Apply via my referral <ExternalLink size={14} />
               </a>
@@ -483,7 +525,7 @@ export default function FounderPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-gradient-to-br from-indigo-600 to-violet-700 py-16">
+      <section className="bg-gradient-to-br from-indigo-600 to-indigo-700 py-16">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-3">Have a project in mind?</h2>
           <p className="text-indigo-200 text-lg mb-8">

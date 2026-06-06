@@ -21,13 +21,20 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">S</span>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shrink-0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" fill="white" fillOpacity="0.95"/>
+            </svg>
           </div>
-          <span className="font-semibold text-slate-900 tracking-tight">
-            Staar Solutions
-          </span>
+          <div>
+            <span className="block font-bold text-slate-900 tracking-tight leading-tight text-base">
+              Staar Solutions
+            </span>
+            <span className="block text-xs text-slate-600 leading-tight font-medium">
+              Crafting software that stands out.
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -47,7 +54,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="ml-4 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:opacity-90 transition-opacity"
+            className="ml-4 px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-indigo-600 to-indigo-600 text-white hover:opacity-90 transition-opacity"
           >
             Start a Project
           </Link>
@@ -83,7 +90,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-2 px-4 py-3 rounded-lg text-sm font-semibold text-center bg-gradient-to-r from-indigo-600 to-violet-600 text-white"
+            className="mt-2 px-4 py-3 rounded-lg text-sm font-semibold text-center bg-gradient-to-r from-indigo-600 to-indigo-600 text-white"
           >
             Start a Project
           </Link>
