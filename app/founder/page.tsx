@@ -120,47 +120,29 @@ export default function FounderPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-24">
           <div className="flex flex-col md:flex-row gap-12 items-start">
-            {/* Profile photo — clean, no ring */}
+            {/* Profile photo — clean */}
             <div className="shrink-0">
-              <div className="relative w-36 h-36">
-                <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/founder_profile_pic.png"
-                    alt="Sandeep Amarnath"
-                    width={144}
-                    height={144}
-                    className="object-cover w-full h-full"
-                    priority
-                  />
-                </div>
-
-                {/* Corner badge */}
-                <a
-                  href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="View Toptal profile"
-                  className="absolute -bottom-2 -right-2 z-20 flex items-center gap-1 bg-indigo-600 hover:bg-indigo-500 transition-colors text-white text-[10px] font-black tracking-wider px-2.5 py-1.5 rounded-full shadow-lg shadow-indigo-500/40 border-2 border-slate-900"
-                >
-                  <Star size={10} className="fill-white text-white" />
-                  TOP 3%
-                </a>
+              <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/founder_profile_pic.png"
+                  alt="Sandeep Amarnath"
+                  width={144}
+                  height={144}
+                  className="object-cover w-full h-full"
+                  priority
+                />
               </div>
-
-              <p className="mt-5 text-center text-xs text-slate-500 font-medium tracking-wide">
-                Toptal verified
-              </p>
             </div>
 
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
                 Sandeep Amarnath
               </h1>
-              <p className="text-xl text-indigo-300 font-medium mb-4">
+              <p className="text-xl text-indigo-300 font-medium mb-3">
                 Technical Lead & Senior Full-Stack Developer · Founder, Staar Solutions
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-slate-400 text-sm mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-slate-400 text-sm mb-5">
                 <span className="flex items-center gap-1.5">
                   <MapPin size={14} className="text-indigo-400" /> Toronto, Canada · Working globally
                 </span>
@@ -169,8 +151,24 @@ export default function FounderPage() {
                 </span>
               </div>
 
+              {/* Toptal trust block — inline with content, clearly readable */}
+              <a
+                href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="toptal-btn-glow inline-flex items-center gap-3 mb-6 px-4 py-3 rounded-xl bg-indigo-950/60 border border-indigo-500/50 hover:border-indigo-400 hover:bg-indigo-900/60 transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
+                  <Star size={14} className="fill-white text-white" />
+                </div>
+                <div className="text-left">
+                  <p className="text-white text-sm font-bold leading-tight">Accepted into Toptal's top 3% network</p>
+                  <p className="text-indigo-400 text-xs mt-0.5">Only 3 in 100 applicants pass · View my profile ↗</p>
+                </div>
+              </a>
+
               <p className="text-slate-300 leading-relaxed max-w-2xl text-lg mb-8">
-                Senior Software Developer with 7+ years building scalable web and mobile applications using React, React Native, and modern JavaScript frameworks. Currently Technical Lead at Staples Canada, and founder of Staar Solutions. Accepted into Toptal's top 3% network.
+                Senior Software Developer with 7+ years building scalable web and mobile applications using React, React Native, and modern JavaScript frameworks. Currently Technical Lead at Staples Canada and founder of Staar Solutions.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -187,14 +185,6 @@ export default function FounderPage() {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
                 >
                   View Resume ↓
-                </a>
-                <a
-                  href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="toptal-btn-glow inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-semibold hover:border-indigo-500 hover:text-white transition-colors"
-                >
-                  Toptal Profile <ExternalLink size={14} />
                 </a>
                 <a
                   href="https://github.com/sandeep194920"
