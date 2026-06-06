@@ -179,42 +179,48 @@ export default function FounderPage() {
               </div>
             </div>
 
-            {/* Right — photo bleeding into bg + Toptal card below */}
-            <div className="hidden lg:flex flex-col items-center justify-end w-80 xl:w-96 shrink-0 relative">
+            {/* Right — photo dissolving into bg + Toptal below */}
+            <div className="hidden lg:flex flex-col items-center justify-end w-96 xl:w-[440px] shrink-0">
 
-              {/* Photo — transparent bg, contains naturally, fades at bottom */}
+              {/* Photo with fades on all 4 edges */}
               <div className="relative w-full flex justify-center">
                 <Image
                   src="/images/founder_profile_pic.png"
                   alt="Sandeep Amarnath"
-                  width={380}
-                  height={380}
-                  className="object-contain w-full max-w-sm drop-shadow-2xl"
+                  width={440}
+                  height={440}
+                  className="object-contain w-full"
                   priority
                 />
-                {/* Bottom fade — melts feet/chest into hero bg */}
-                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d1225] via-[#0d1225]/60 to-transparent pointer-events-none" />
-                {/* Left edge fade */}
-                <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-[#0d1225] to-transparent pointer-events-none" />
+                {/* Bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#0d1225] via-[#0d1225]/50 to-transparent pointer-events-none" />
+                {/* Top */}
+                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#0d1225] to-transparent pointer-events-none" />
+                {/* Left */}
+                <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-[#0d1225] to-transparent pointer-events-none" />
+                {/* Right */}
+                <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-[#0d1225] to-transparent pointer-events-none" />
               </div>
 
-              {/* Toptal card — snug below photo, feels attached */}
+              {/* Toptal — no border, just logo + text, feels like a caption */}
               <a
                 href="https://talent.toptal.com/resume/developers/sandeep-amarnath"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="toptal-btn-glow w-full flex items-center gap-4 px-5 py-4 bg-slate-900/80 border border-indigo-500/30 hover:border-indigo-400/60 rounded-2xl transition-colors backdrop-blur-sm mb-8"
+                className="toptal-btn-glow flex items-center gap-3 mb-10 group hover:opacity-80 transition-opacity"
               >
                 <Image
                   src="/images/toptal_logo.svg"
                   alt="Toptal"
-                  width={36}
-                  height={36}
-                  className="shrink-0 brightness-0 invert"
+                  width={28}
+                  height={28}
+                  className="shrink-0 brightness-0 invert opacity-70"
                 />
                 <div>
-                  <p className="text-white text-sm font-bold leading-tight">Verified Toptal Member</p>
-                  <p className="text-indigo-400 text-xs mt-0.5">Top 3% · Only 3 in 100 pass · View profile ↗</p>
+                  <p className="text-slate-300 text-sm font-semibold leading-tight group-hover:text-white transition-colors">
+                    Verified Toptal Member
+                  </p>
+                  <p className="text-indigo-400 text-xs mt-0.5">Top 3% · Only 3 in 100 pass ↗</p>
                 </div>
               </a>
             </div>
