@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, ArrowRight, CheckCircle } from "lucide-react";
 
 const clients = [
@@ -11,7 +12,7 @@ const clients = [
     description:
       "Zenorbis Technologies needed a professional web presence to communicate their expertise across aerospace, automotive, healthcare, energy, and manufacturing sectors. We designed and built a clean, credibility-first corporate website that clearly positions their services and converts visitors into leads.",
     industry: "Engineering & IT Services",
-    color: "from-blue-600 to-indigo-700",
+    image: "/images/apps/zenorbis/zenorbis1.png",
     bgLight: "bg-blue-50",
     textAccent: "text-blue-700",
     industries: ["Aerospace", "Automotive", "Healthcare", "Energy", "Manufacturing"],
@@ -35,7 +36,7 @@ const clients = [
     description:
       "Cyntronex is a dynamic engineering company with deep expertise in 3D/2D design, manufacturing, and automation. We built a bold, structured website that showcases their three core service pillars — Product Design, Manufacturing, and Advanced Engineering & Automation — with detailed service pages that convert engineering buyers.",
     industry: "Engineering & Manufacturing",
-    color: "from-orange-500 to-red-600",
+    image: "/images/apps/cyntronex/cyntronex.png",
     bgLight: "bg-orange-50",
     textAccent: "text-orange-700",
     services: ["Product Design", "Manufacturing", "Advanced Engineering & Automation"],
@@ -76,18 +77,15 @@ export default function ClientsPage() {
               id={client.id}
               className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-start`}
             >
-              {/* Screenshot placeholder */}
+              {/* Screenshot */}
               <div className="lg:w-1/2 w-full">
-                <div
-                  className={`rounded-2xl bg-gradient-to-br ${client.color} aspect-video flex flex-col items-center justify-center relative overflow-hidden`}
-                >
-                  <span className="text-white/10 text-8xl font-black select-none absolute top-4 left-4">
-                    {client.name[0]}
-                  </span>
-                  <p className="text-white font-bold text-xl relative z-10 mb-2">{client.name}</p>
-                  <p className="text-white/60 text-sm bg-black/20 px-4 py-2 rounded-full relative z-10">
-                    Website screenshots coming soon
-                  </p>
+                <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-video relative">
+                  <Image
+                    src={client.image}
+                    alt={`${client.name} website`}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
 
                 {/* Industry badges */}

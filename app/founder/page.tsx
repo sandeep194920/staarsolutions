@@ -83,10 +83,11 @@ const experience = [
 ];
 
 const inHouseApps = [
-  { name: "FocusSharp", desc: "Focus timer & time tracker", href: "/apps#focussharp", live: "https://focussharp.app" },
-  { name: "CodeVizual", desc: "Algorithm visualizations for FAANG prep", href: "/apps#codevizual", live: "https://codevizual.com" },
-  { name: "SaveNShare", desc: "Unified video saving app", href: "/apps#savenshare" },
-  { name: "Thinky", desc: "Curated riddle app", href: "/apps#thinky" },
+  { name: "FocusSharp", desc: "Focus timer & time tracker", href: "/apps#focussharp", live: "https://focussharp.app", image: "/images/apps/focussharp/focus1.png" },
+  { name: "CodeVizual", desc: "Algorithm visualizations for FAANG prep", href: "/apps#codevizual", image: "/images/apps/codevisual/cv3.png" },
+  { name: "SaveNShare", desc: "Unified video saving app", href: "/apps#savenshare", live: "https://savenshare-ten.vercel.app/", image: "/images/apps/savenshare/sns3.png" },
+  { name: "Thinky", desc: "Curated riddle app", href: "/apps#thinky", image: "/images/apps/thinky/thinky2.png" },
+  { name: "Cash Transaction Tracker", desc: "Ledger app for small businesses", href: "/apps#ctt", image: "/images/apps/ctt/ctt1.png" },
 ];
 
 // TODO: Replace with your actual Google Drive embed/preview URL
@@ -432,27 +433,73 @@ export default function FounderPage() {
       </section>
 
       {/* In-house apps */}
-      <section className="bg-slate-50 py-16">
+      <section className="bg-slate-50 py-16 pb-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4">Products</p>
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Apps I've built</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Apps I've built</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {inHouseApps.map((app) => (
-              <div key={app.name} className="bg-white rounded-2xl p-5 border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all duration-300">
-                <h3 className="font-bold text-slate-900 mb-1">{app.name}</h3>
-                <p className="text-sm text-slate-500 mb-4">{app.desc}</p>
-                <div className="flex gap-3">
-                  <Link href={app.href} className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors">
-                    Details →
-                  </Link>
+              <Link
+                key={app.name}
+                href={app.href}
+                className="group block bg-white rounded-2xl border border-slate-100 overflow-hidden hover:border-slate-200 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="h-36 relative overflow-hidden bg-slate-100">
+                  <Image
+                    src={app.image}
+                    alt={app.name}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-start justify-between mb-1">
+                    <h3 className="font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">{app.name}</h3>
+                    {app.live && (
+                      <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full shrink-0">Live</span>
+                    )}
+                  </div>
+                  <p className="text-sm text-slate-500 mb-3">{app.desc}</p>
                   {app.live && (
-                    <a href={app.live} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-emerald-600 hover:text-emerald-800 transition-colors flex items-center gap-1">
+                    <span className="text-xs font-semibold text-emerald-600 flex items-center gap-1">
                       Live <ExternalLink size={10} />
-                    </a>
+                    </span>
                   )}
                 </div>
-              </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client work */}
+      <section className="bg-slate-50 pt-8 pb-16 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4">Client Work</p>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Products built for clients</h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { name: "Zenorbis Technologies", desc: "Corporate website for an engineering & IT services firm", website: "https://zenorbis.com", image: "/images/apps/zenorbis/zenorbis1.png" },
+              { name: "Cyntronex", desc: "Product & services website for an engineering and automation company", website: "https://cyntronex.com", image: "/images/apps/cyntronex/cyntronex.png" },
+            ].map((client) => (
+              <Link
+                key={client.name}
+                href="/clients"
+                className="group block bg-white rounded-2xl border border-slate-100 overflow-hidden hover:border-slate-200 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="h-44 relative overflow-hidden bg-slate-100">
+                  <Image src={client.image} alt={client.name} fill className="object-cover object-top" />
+                </div>
+                <div className="p-5">
+                  <div className="flex items-start justify-between mb-1">
+                    <h3 className="font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">{client.name}</h3>
+                    <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full shrink-0">Delivered</span>
+                  </div>
+                  <p className="text-sm text-slate-500">{client.desc}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle, MapPin, Clock, Star } from "lucide-react";
+import { Send, CheckCircle, MapPin, Clock, Code2 } from "lucide-react";
 
 const projectTypes = [
   "iOS App",
@@ -22,6 +22,8 @@ const budgetRanges = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -37,8 +39,21 @@ export default function ContactPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: Wire to email service (Resend / Formspree / Supabase edge function)
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please email us directly at sandeepamarnath@staarsolutions.ca");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -65,7 +80,7 @@ export default function ContactPage() {
                 <h2 className="text-lg font-bold text-slate-900 mb-4">Why work with us?</h2>
                 <ul className="space-y-3">
                   {[
-                    "Top 3% on Toptal — independently verified quality",
+                    "7+ years building production web and mobile apps",
                     "Full-stack from idea to launch — no handoffs",
                     "Apple-quality UI/UX design standards",
                     "iOS, Android, and web under one roof",
@@ -100,11 +115,11 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
-                    <Star size={15} className="text-amber-600" />
+                    <Code2 size={15} className="text-amber-600" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 font-medium">Toptal rating</p>
-                    <p className="text-sm font-semibold text-slate-900">Top 3% globally</p>
+                    <p className="text-xs text-slate-400 font-medium">Experience</p>
+                    <p className="text-sm font-semibold text-slate-900">7+ years · Web & Mobile</p>
                   </div>
                 </div>
               </div>
@@ -112,10 +127,10 @@ export default function ContactPage() {
               <div>
                 <p className="text-xs text-slate-400 font-medium uppercase tracking-wider mb-2">Email us directly</p>
                 <a
-                  href="mailto:hello@staarsolutions.com"
+                  href="mailto:sandeepamarnath@staarsolutions.ca"
                   className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors text-sm"
                 >
-                  hello@staarsolutions.com
+                  sandeepamarnath@staarsolutions.ca
                 </a>
               </div>
             </div>
@@ -230,10 +245,13 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+                    disabled={loading}
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send message <Send size={15} />
+                    {loading ? "Sending…" : <> Send message <Send size={15} /> </>}
                   </button>
+
+                  {error && <p className="text-sm text-rose-500">{error}</p>}
 
                   <p className="text-xs text-slate-400">
                     We respond within 24 hours. No spam, no sales calls you didn't ask for.

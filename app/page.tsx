@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Smartphone, Globe, Zap, Users, Code2, Star } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Smartphone, Globe, Zap, Users, Code2 } from "lucide-react";
 
 const apps = [
   {
@@ -11,6 +12,7 @@ const apps = [
     color: "from-blue-500 to-cyan-500",
     href: "/apps#focussharp",
     live: "https://focussharp.app",
+    image: "/images/apps/focussharp/focus1.png",
   },
   {
     name: "SaveNShare",
@@ -20,6 +22,7 @@ const apps = [
     tags: ["iOS", "Android", "React Native"],
     color: "from-rose-500 to-pink-500",
     href: "/apps#savenshare",
+    image: "/images/apps/savenshare/sns3.png",
   },
   {
     name: "CodeVizual",
@@ -29,6 +32,7 @@ const apps = [
     tags: ["Web", "Next.js", "EdTech"],
     color: "from-indigo-500 to-purple-600",
     href: "/apps#codevizual",
+    image: "/images/apps/codevisual/cv3.png",
   },
   {
     name: "Thinky",
@@ -38,6 +42,7 @@ const apps = [
     tags: ["iOS", "Android", "React Native"],
     color: "from-amber-500 to-orange-500",
     href: "/apps#thinky",
+    image: "/images/apps/thinky/thinky2.png",
   },
   {
     name: "Cash Transaction Tracker",
@@ -47,6 +52,7 @@ const apps = [
     tags: ["iOS", "Android", "React Native"],
     color: "from-emerald-500 to-teal-600",
     href: "/apps#ctt",
+    image: "/images/apps/ctt/ctt1.png",
   },
 ];
 
@@ -78,9 +84,8 @@ const services = [
 ];
 
 const stats = [
-  { value: "4+", label: "In-house apps" },
+  { value: "5", label: "In-house apps" },
   { value: "7+", label: "Years building" },
-  { value: "Top 3%", label: "Toptal rating" },
   { value: "2", label: "Client products shipped" },
 ];
 
@@ -101,8 +106,7 @@ export default function Home() {
             {/* Left — copy */}
             <div className="flex-1 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-8 uppercase tracking-wide">
-                <Star size={12} className="fill-indigo-400 text-indigo-400" />
-                Software Studio · Toptal Verified
+                Software Studio
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
@@ -198,19 +202,12 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Floating badges */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
-                <span className="text-lg">🏆</span>
-                <div>
-                  <p className="text-xs font-bold text-slate-900">Toptal Verified</p>
-                  <p className="text-xs text-slate-400">Top 3% globally</p>
-                </div>
-              </div>
-              <div className="absolute bottom-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
+              {/* Floating badge */}
+              <div className="absolute -top-4 -right-4 bg-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
                 <span className="text-lg">🚀</span>
                 <div>
-                  <p className="text-xs font-bold text-slate-900">5 apps in the works</p>
-                  <p className="text-xs text-slate-400">and counting</p>
+                  <p className="text-xs font-bold text-slate-900">5 apps built in-house</p>
+                  <p className="text-xs font-medium text-slate-600">2 live · 3 in development</p>
                 </div>
               </div>
             </div>
@@ -274,16 +271,13 @@ export default function Home() {
                 href={app.href}
                 className="group block bg-white rounded-2xl border border-slate-100 overflow-hidden hover:border-slate-200 hover:shadow-lg transition-all duration-300"
               >
-                {/* Placeholder image area */}
-                <div className={`h-48 bg-gradient-to-br ${app.color} relative flex items-center justify-center`}>
-                  <span className="text-white/20 text-7xl font-black select-none">
-                    {app.name[0]}
-                  </span>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/60 text-sm font-medium bg-black/20 px-3 py-1 rounded-full">
-                      Screenshot / GIF coming soon
-                    </span>
-                  </div>
+                <div className="h-48 relative overflow-hidden bg-slate-100">
+                  <Image
+                    src={app.image}
+                    alt={app.name}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
 
                 <div className="p-6">
@@ -344,14 +338,14 @@ export default function Home() {
                 type: "Corporate Website",
                 desc: "Full company website for an engineering & IT services firm serving aerospace, automotive, and healthcare industries.",
                 tags: ["Web Design", "Development", "SEO"],
-                color: "from-blue-600 to-indigo-700",
+                image: "/images/apps/zenorbis/zenorbis1.png",
               },
               {
                 name: "Cyntronex",
                 type: "Product & Services Website",
                 desc: "Marketing website for a dynamic engineering company specialising in product design, manufacturing, and automation.",
                 tags: ["Web Design", "Development", "Branding"],
-                color: "from-orange-500 to-red-600",
+                image: "/images/apps/cyntronex/cyntronex.png",
               },
             ].map((client) => (
               <Link
@@ -359,13 +353,13 @@ export default function Home() {
                 href="/clients"
                 className="group block bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-slate-600 hover:shadow-xl transition-all duration-300"
               >
-                <div className={`h-40 bg-gradient-to-br ${client.color} flex items-center justify-center relative`}>
-                  <span className="text-white font-bold text-lg">{client.name}</span>
-                  <div className="absolute bottom-3 right-3">
-                    <span className="text-xs font-medium text-white/70 bg-black/30 px-2 py-1 rounded-full">
-                      Screenshot coming soon
-                    </span>
-                  </div>
+                <div className="h-40 relative overflow-hidden bg-slate-800">
+                  <Image
+                    src={client.image}
+                    alt={client.name}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
                 <div className="p-6">
                   <p className="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1">{client.type}</p>

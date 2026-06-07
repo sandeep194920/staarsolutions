@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, Smartphone, Globe, ArrowRight } from "lucide-react";
 
@@ -11,10 +12,14 @@ const apps = [
     platforms: ["Web", "iOS (coming soon)"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Framer Motion"],
     status: "Live",
-    color: "from-blue-500 to-cyan-500",
     bgLight: "bg-blue-50",
     textAccent: "text-blue-600",
     live: "https://focussharp.app",
+    layout: "landscape-portrait" as const,
+    images: [
+      { src: "/images/apps/focussharp/focus1.png", alt: "FocusSharp web app hero" },
+      { src: "/images/apps/focussharp/focus2.png", alt: "FocusSharp timer screen" },
+    ],
     features: [
       "Circular countdown ring with smooth animation",
       "Flow mode (open-ended count-up session)",
@@ -33,9 +38,14 @@ const apps = [
     platforms: ["iOS", "Android"],
     tech: ["React Native", "Expo", "NativeWind", "Supabase", "Expo Router"],
     status: "In Development",
-    color: "from-rose-500 to-pink-500",
+    live: "https://savenshare-ten.vercel.app/",
     bgLight: "bg-rose-50",
     textAccent: "text-rose-600",
+    layout: "landscape-portrait" as const,
+    images: [
+      { src: "/images/apps/savenshare/sns3.png", alt: "SaveNShare website" },
+      { src: "/images/apps/savenshare/sns2.png", alt: "SaveNShare app screen" },
+    ],
     features: [
       "iOS Share Extension & Android Share Intent",
       "Playlists with one level of sub-playlists",
@@ -55,9 +65,13 @@ const apps = [
     platforms: ["Web"],
     tech: ["Next.js", "React 19", "TypeScript", "Tailwind CSS 4"],
     status: "In Development",
-    color: "from-violet-500 to-purple-600",
     bgLight: "bg-violet-50",
     textAccent: "text-violet-600",
+    layout: "two-landscape" as const,
+    images: [
+      { src: "/images/apps/codevisual/cv3.png", alt: "CodeVizual landing page" },
+      { src: "/images/apps/codevisual/cv2.png", alt: "CodeVizual visualizer UI" },
+    ],
     features: [
       "Interactive step-by-step algorithm visualizations",
       "Line-by-line code mapping with real-time variable tracking",
@@ -77,9 +91,13 @@ const apps = [
     platforms: ["iOS", "Android", "Web"],
     tech: ["React Native", "Expo", "NativeWind", "Zustand", "TypeScript"],
     status: "In Development",
-    color: "from-amber-500 to-orange-500",
     bgLight: "bg-amber-50",
     textAccent: "text-amber-600",
+    layout: "two-portrait" as const,
+    images: [
+      { src: "/images/apps/thinky/thinky2.png", alt: "Thinky home screen" },
+      { src: "/images/apps/thinky/thinky1.png", alt: "Thinky riddle detail" },
+    ],
     features: [
       "1000+ curated high-quality riddles",
       "Daily challenge — Wordle-style virality",
@@ -98,9 +116,13 @@ const apps = [
     platforms: ["iOS", "Android"],
     tech: ["React Native", "Expo", "TypeScript"],
     status: "In Development",
-    color: "from-emerald-500 to-teal-600",
     bgLight: "bg-emerald-50",
     textAccent: "text-emerald-600",
+    layout: "landscape-portrait" as const,
+    images: [
+      { src: "/images/apps/ctt/ctt1.png", alt: "Cash Transaction Tracker landing page" },
+      { src: "/images/apps/ctt/ctt2.png", alt: "Cash Transaction Tracker mobile app" },
+    ],
     features: [
       "Per-customer transaction tracking",
       "Balance management & settlement",
@@ -112,6 +134,47 @@ const apps = [
     ],
   },
 ];
+
+function AppScreenshots({ app }: { app: (typeof apps)[number] }) {
+  if (app.layout === "two-landscape") {
+    return (
+      <div className="flex flex-col gap-3">
+        {app.images.map((img) => (
+          <div key={img.src} className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+            <Image src={img.src} alt={img.alt} width={1200} height={680} className="w-full h-auto" />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (app.layout === "landscape-portrait") {
+    return (
+      <div className="relative">
+        {/* Landscape screenshot */}
+        <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+          <Image src={app.images[0].src} alt={app.images[0].alt} width={1200} height={680} className="w-full h-auto" />
+        </div>
+        {/* Portrait inset — bottom-right corner overlap */}
+        <div className="absolute -bottom-6 right-4 w-32 sm:w-40 rounded-2xl overflow-hidden border-2 border-white shadow-xl">
+          <Image src={app.images[1].src} alt={app.images[1].alt} width={400} height={860} className="w-full h-auto" />
+        </div>
+      </div>
+    );
+  }
+
+  // two-portrait: side by side, slightly offset for depth
+  return (
+    <div className="flex gap-4 items-start justify-center px-4">
+      <div className="flex-1 max-w-[46%] rounded-2xl overflow-hidden border border-slate-200 shadow-md mt-6">
+        <Image src={app.images[0].src} alt={app.images[0].alt} width={400} height={860} className="w-full h-auto" />
+      </div>
+      <div className="flex-1 max-w-[46%] rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <Image src={app.images[1].src} alt={app.images[1].alt} width={400} height={860} className="w-full h-auto" />
+      </div>
+    </div>
+  );
+}
 
 export default function AppsPage() {
   return (
@@ -134,28 +197,16 @@ export default function AppsPage() {
 
       {/* Apps */}
       <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-28">
           {apps.map((app, i) => (
             <div
               key={app.id}
               id={app.id}
-              className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-start`}
+              className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 lg:gap-16 items-center`}
             >
-              {/* Screenshot placeholder */}
-              <div className="lg:w-1/2 w-full">
-                <div
-                  className={`rounded-2xl bg-gradient-to-br ${app.color} aspect-video flex items-center justify-center relative overflow-hidden`}
-                >
-                  <span className="text-white/10 text-[120px] font-black select-none absolute">
-                    {app.name[0]}
-                  </span>
-                  <div className="relative text-center">
-                    <p className="text-white font-bold text-xl mb-2">{app.name}</p>
-                    <p className="text-white/70 text-sm bg-black/20 px-4 py-2 rounded-full">
-                      App screenshots / GIF coming soon
-                    </p>
-                  </div>
-                </div>
+              {/* Screenshots */}
+              <div className={`w-full lg:w-1/2 ${app.layout === "landscape-portrait" ? "pb-8" : ""}`}>
+                <AppScreenshots app={app} />
               </div>
 
               {/* Content */}
@@ -170,7 +221,7 @@ export default function AppsPage() {
                   >
                     {app.status}
                   </span>
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     {app.platforms.map((p) => (
                       <span key={p} className="flex items-center gap-1 text-xs text-slate-500">
                         {p.includes("iOS") || p.includes("Android") ? (
@@ -209,10 +260,9 @@ export default function AppsPage() {
                   ))}
                 </div>
 
-                {/* CTA */}
-                {app.live && (
+                {"live" in app && app.live && (
                   <a
-                    href={app.live}
+                    href={app.live as string}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
