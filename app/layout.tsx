@@ -10,17 +10,44 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Staar Solutions — Software Studio",
+  title: {
+    default: "Staar Solutions — Software Studio",
+    template: "%s | Staar Solutions",
+  },
   description:
-    "Staar Solutions builds high-quality iOS, web, and cross-platform applications. We create in-house products and take on client projects.",
-  metadataBase: new URL("https://staarsolutions.com"),
+    "Staar Solutions is a Canadian software studio building iOS, web, and cross-platform applications. We ship in-house products and partner with clients to bring their ideas to life.",
+  metadataBase: new URL("https://staarsolutions.ca"),
+  keywords: ["software studio", "iOS app development", "web app development", "React Native", "Next.js", "Toronto", "Canada", "mobile app", "full-stack"],
+  authors: [{ name: "Sandeep Amarnath", url: "https://staarsolutions.ca/founder" }],
+  creator: "Sandeep Amarnath",
   openGraph: {
     title: "Staar Solutions — Software Studio",
     description:
-      "Staar Solutions builds high-quality iOS, web, and cross-platform applications.",
-    url: "https://staarsolutions.com",
+      "Canadian software studio building iOS, web, and cross-platform applications. In-house products and client work.",
+    url: "https://staarsolutions.ca",
     siteName: "Staar Solutions",
     type: "website",
+    locale: "en_CA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Staar Solutions — Software Studio",
+    description:
+      "Canadian software studio building iOS, web, and cross-platform applications.",
+    creator: "@sandeepamarnath",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://staarsolutions.ca",
   },
 };
 

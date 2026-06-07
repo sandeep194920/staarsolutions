@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, ArrowRight, CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Client Work",
+  description:
+    "Web products built by Staar Solutions for clients — Zenorbis Technologies and Cyntronex. Full-stack design and development from discovery to launch.",
+  alternates: { canonical: "https://staarsolutions.ca/clients" },
+  openGraph: {
+    title: "Client Work — Staar Solutions",
+    description: "Web products built for Zenorbis Technologies and Cyntronex by Staar Solutions.",
+    url: "https://staarsolutions.ca/clients",
+  },
+};
 
 const clients = [
   {

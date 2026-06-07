@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, MapPin, Briefcase, Star, Code2, Smartphone, Globe, GraduationCap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Founder",
+  description:
+    "Sandeep Amarnath — Senior Full-Stack Developer and founder of Staar Solutions. 7+ years building iOS, web, and cross-platform apps. Technical Lead at Staples Canada. Top 3% on Toptal.",
+  alternates: { canonical: "https://staarsolutions.ca/founder" },
+  openGraph: {
+    title: "Sandeep Amarnath — Founder of Staar Solutions",
+    description: "Senior Full-Stack Developer, Technical Lead at Staples Canada, Top 3% on Toptal.",
+    url: "https://staarsolutions.ca/founder",
+  },
+};
 
 const skills = {
   "Languages": [
@@ -90,8 +103,6 @@ const inHouseApps = [
   { name: "Cash Transaction Tracker", desc: "Ledger app for small businesses", href: "/apps#ctt", image: "/images/apps/ctt/ctt1.png" },
 ];
 
-// TODO: Replace with your actual Google Drive embed/preview URL
-// Format: https://drive.google.com/file/d/YOUR_FILE_ID/preview
 const RESUME_DRIVE_EMBED_URL = "https://drive.google.com/file/d/1pcL1czFgXxifgwwQL-W-Eo6O-ojyE24S/preview";
 const RESUME_DRIVE_DOWNLOAD_URL = "https://drive.google.com/uc?export=download&id=1pcL1czFgXxifgwwQL-W-Eo6O-ojyE24S";
 
@@ -533,7 +544,7 @@ export default function FounderPage() {
                 Looking for a senior React, React Native, or full-stack developer? Hire me through Toptal for vetted, contract engagements. You get top-3% quality with Toptal's no-risk guarantee.
               </p>
               <a
-                href="https://www.toptal.com/ddZznJ/worlds-top-talent"
+                href="https://talent.toptal.com/ddZznJ/worlds-top-talent"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-600 text-white text-sm font-bold hover:opacity-90 transition-opacity"
@@ -556,7 +567,7 @@ export default function FounderPage() {
                 Are you a developer, designer, or finance expert? Apply to join Toptal through my referral link and earn up to <strong className="text-white">$100 in rewards</strong> when you land your first job.
               </p>
               <a
-                href="https://www.toptal.com/talent/apply/ddZznJ/worlds-top-talent"
+                href="https://talent.toptal.com/talent/apply/ddZznJ/worlds-top-talent"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-indigo-500/50 text-indigo-300 text-sm font-bold hover:bg-indigo-500/10 transition-colors"

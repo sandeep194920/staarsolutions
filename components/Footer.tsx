@@ -17,9 +17,9 @@ const footerLinks: { [group: string]: FooterLink[] } = {
   ],
   Products: [
     { label: "FocusSharp", href: "https://focussharp.app", external: true },
-    { label: "CodeVizual", href: "https://codevizual.com", external: true },
-    { label: "SaveNShare", href: "#", external: false },
-    { label: "Thinky", href: "#", external: false },
+    { label: "CodeVizual", href: "/apps#codevizual", external: false },
+    { label: "SaveNShare", href: "https://savenshare-ten.vercel.app/", external: true },
+    { label: "Thinky", href: "/apps#thinky", external: false },
   ],
 };
 

@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink, Smartphone, Globe, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Apps",
+  description:
+    "In-house apps built by Staar Solutions — FocusSharp, CodeVizual, SaveNShare, Thinky, and Cash Transaction Tracker. iOS, Android, and web applications.",
+  alternates: { canonical: "https://staarsolutions.ca/apps" },
+  openGraph: {
+    title: "Our Apps — Staar Solutions",
+    description: "In-house iOS, Android, and web apps built by Staar Solutions.",
+    url: "https://staarsolutions.ca/apps",
+  },
+};
 
 const apps = [
   {

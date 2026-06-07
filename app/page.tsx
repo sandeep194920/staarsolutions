@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Smartphone, Globe, Zap, Users, Code2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Staar Solutions — Software Studio",
+  description:
+    "Staar Solutions is a Canadian software studio building iOS, web, and cross-platform applications. We ship in-house products and partner with clients to bring their ideas to life.",
+  alternates: { canonical: "https://staarsolutions.ca" },
+  openGraph: {
+    title: "Staar Solutions — Software Studio",
+    description: "Canadian software studio building iOS, web, and cross-platform applications.",
+    url: "https://staarsolutions.ca",
+  },
+};
 
 const apps = [
   {
@@ -207,7 +220,7 @@ export default function Home() {
                 <span className="text-lg">🚀</span>
                 <div>
                   <p className="text-xs font-bold text-slate-900">5 apps built in-house</p>
-                  <p className="text-xs font-medium text-slate-600">2 live · 3 in development</p>
+                  <p className="text-xs font-medium text-slate-600">1 live · 4 in development</p>
                 </div>
               </div>
             </div>
