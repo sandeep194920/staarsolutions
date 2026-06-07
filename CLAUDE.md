@@ -51,7 +51,7 @@ public/
 | App | Status | Platforms | Live URL |
 |---|---|---|---|
 | FocusSharp | Live | Web, iOS (coming) | focussharp.app |
-| CodeVizual | Live | Web | codevizual.com |
+| CodeVizual | In Development | Web | codevizual-com.vercel.app |
 | SaveNShare | In Development | iOS, Android | — |
 | Thinky | In Development | iOS, Android, Web | — |
 

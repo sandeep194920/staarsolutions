@@ -78,6 +78,7 @@ const apps = [
     platforms: ["Web"],
     tech: ["Next.js", "React 19", "TypeScript", "Tailwind CSS 4"],
     status: "In Development",
+    live: "https://codevizual-com.vercel.app/",
     bgLight: "bg-violet-50",
     textAccent: "text-violet-600",
     layout: "two-landscape" as const,
