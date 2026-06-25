@@ -28,14 +28,15 @@ const apps = [
     image: "/images/apps/focussharp/focus1.png",
   },
   {
-    name: "SaveNShare",
-    tagline: "One home for all your saved videos",
+    name: "Thinky",
+    tagline: "The definitive riddle app",
     description:
-      "Save videos from YouTube, Instagram, TikTok into organised playlists with notes. Share curated collections with friends.",
-    tags: ["iOS", "Android", "React Native"],
-    color: "from-rose-500 to-pink-500",
-    href: "/apps#savenshare",
-    image: "/images/apps/savenshare/sns3.png",
+      "High-quality curated riddles sourced from YouTube puzzle channels and logic communities. Daily challenges, streaks, and shareable results.",
+    tags: ["iOS", "React Native"],
+    color: "from-amber-500 to-orange-500",
+    href: "/apps#thinky",
+    live: "https://apps.apple.com/app/thinky/id6779846296",
+    image: "/images/apps/thinky/thinky2.png",
   },
   {
     name: "CodeVizual",
@@ -48,14 +49,14 @@ const apps = [
     image: "/images/apps/codevisual/cv3.png",
   },
   {
-    name: "Thinky",
-    tagline: "The definitive riddle app",
+    name: "SaveNShare",
+    tagline: "One home for all your saved videos",
     description:
-      "High-quality curated riddles sourced from YouTube puzzle channels and logic communities. Daily challenges, streaks, and shareable results.",
+      "Save videos from YouTube, Instagram, TikTok into organised playlists with notes. Share curated collections with friends.",
     tags: ["iOS", "Android", "React Native"],
-    color: "from-amber-500 to-orange-500",
-    href: "/apps#thinky",
-    image: "/images/apps/thinky/thinky2.png",
+    color: "from-rose-500 to-pink-500",
+    href: "/apps#savenshare",
+    image: "/images/apps/savenshare/sns3.png",
   },
   {
     name: "Cash Transaction Tracker",
@@ -167,15 +168,15 @@ export default function Home() {
                 {/* Back card */}
                 <div className="absolute top-8 right-0 w-72 bg-slate-900 border border-slate-700 rounded-2xl p-5 shadow-2xl rotate-3">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white text-sm font-black">S</div>
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white text-sm font-black">T</div>
                     <div>
-                      <p className="text-white text-sm font-semibold">SaveNShare</p>
-                      <p className="text-slate-500 text-xs">iOS · Android</p>
+                      <p className="text-white text-sm font-semibold">Thinky</p>
+                      <p className="text-slate-500 text-xs">iOS · Riddle app</p>
                     </div>
-                    <span className="ml-auto text-xs font-semibold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full">Dev</span>
+                    <span className="ml-auto text-xs font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">Live</span>
                   </div>
-                  <div className="h-24 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-600/10 border border-rose-500/20 flex items-center justify-center">
-                    <p className="text-rose-400/60 text-xs">Unified video playlists</p>
+                  <div className="h-24 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/20 flex items-center justify-center">
+                    <p className="text-amber-400/60 text-xs">Daily riddle challenges</p>
                   </div>
                 </div>
 
@@ -220,7 +221,7 @@ export default function Home() {
                 <span className="text-lg">🚀</span>
                 <div>
                   <p className="text-xs font-bold text-slate-900">5 apps built in-house</p>
-                  <p className="text-xs font-medium text-slate-600">1 live · 4 in development</p>
+                  <p className="text-xs font-medium text-slate-600">2 live · 3 in development</p>
                 </div>
               </div>
             </div>
