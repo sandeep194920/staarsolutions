@@ -37,7 +37,7 @@ Verified Toptal member — top 3% of global software developers.
 | [FocusSharp](https://focussharp.app) | Minimal focus timer & time tracker | Web, iOS | Live |
 | [CodeVizual](https://codevizual.com) | Algorithm visualizations for interview prep | Web | In development |
 | SaveNShare | Save videos from YouTube, Instagram, TikTok into organized playlists | iOS, Android | In development |
-| Thinky | Curated riddle app with daily challenges and streaks | iOS, Android, Web | In development |
+| [Thinky](https://apps.apple.com/app/thinky/id6779846296) | Curated riddle app with daily challenges and streaks | iOS | Live |
 
 ---
 
