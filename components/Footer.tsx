@@ -19,7 +19,7 @@ const footerLinks: { [group: string]: FooterLink[] } = {
     { label: "FocusSharp", href: "https://focussharp.app", external: true },
     { label: "CodeVizual", href: "https://codevizual.com", external: true },
     { label: "SaveNShare", href: "https://savenshare-ten.vercel.app/", external: true },
-    { label: "Thinky", href: "/apps#thinky", external: false },
+    { label: "Thinky (iOS)", href: "https://apps.apple.com/us/app/thinky/id6779846296", external: true },
   ],
 };
 

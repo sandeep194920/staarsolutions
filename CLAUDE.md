@@ -26,7 +26,7 @@ Domain: **staarsolutions.ca** · Deployed on Vercel
 app/
   layout.tsx          # Root layout — Inter font, Navbar, Footer
   page.tsx            # Home (/) — hero, services, apps preview, client preview, CTA
-  apps/page.tsx       # /apps — all 4 in-house apps with detail
+  apps/page.tsx       # /apps — all 5 in-house apps with detail
   clients/page.tsx    # /clients — Zenorbis + Cyntronex with deliverables
   founder/page.tsx    # /founder — Sandeep bio, skills, Toptal, resume download
   contact/page.tsx    # /contact — project inquiry form
@@ -53,7 +53,7 @@ public/
 | FocusSharp | Live | Web, iOS (coming) | focussharp.app |
 | CodeVizual | In Development | Web | codevizual.com |
 | SaveNShare | In Development | iOS, Android | — |
-| Thinky | In Development | iOS, Android, Web | — |
+| Thinky | Live | iOS | apps.apple.com/us/app/thinky/id6779846296 |
 
 ## Client projects covered
 

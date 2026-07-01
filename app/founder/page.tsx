@@ -99,7 +99,7 @@ const inHouseApps = [
   { name: "FocusSharp", desc: "Focus timer & time tracker", href: "/apps#focussharp", live: "https://focussharp.app", image: "/images/apps/focussharp/focus1.png" },
   { name: "CodeVizual", desc: "Algorithm visualizations for FAANG prep", href: "/apps#codevizual", image: "/images/apps/codevisual/cv3.png" },
   { name: "SaveNShare", desc: "Unified video saving app", href: "/apps#savenshare", live: "https://savenshare-ten.vercel.app/", image: "/images/apps/savenshare/sns3.png" },
-  { name: "Thinky", desc: "Curated riddle app", href: "/apps#thinky", image: "/images/apps/thinky/thinky2.png" },
+  { name: "Thinky", desc: "Curated riddle app", href: "/apps#thinky", live: "https://apps.apple.com/us/app/thinky/id6779846296", image: "/images/apps/thinky/thinky2.png" },
   { name: "Cash Transaction Tracker", desc: "Ledger app for small businesses", href: "/apps#ctt", image: "/images/apps/ctt/ctt1.png" },
 ];
 

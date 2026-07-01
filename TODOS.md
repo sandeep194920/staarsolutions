@@ -7,7 +7,6 @@
 - [ ] **FocusSharp screenshot/GIF** — Add real app screenshot or screen recording GIF to `/apps#focussharp` section (replace gradient placeholder)
 - [ ] **SaveNShare screenshot/GIF** — Add real app screenshot or screen recording GIF to `/apps#savenshare` section
 - [ ] **CodeVizual screenshot/GIF** — Add real app screenshot or screen recording GIF to `/apps#codevizual` section
-- [ ] **Thinky screenshot/GIF** — Add real app screenshot or screen recording GIF to `/apps#thinky` section
 - [ ] **Zenorbis screenshot** — Add real website screenshot to `/clients#zenorbis` (replace gradient placeholder)
 - [ ] **Cyntronex screenshot** — Add real website screenshot to `/clients#cyntronex` (replace gradient placeholder)
 - [ ] **Home page app cards** — Replace gradient placeholders with actual app screenshots once available
@@ -28,7 +27,6 @@
 - [ ] **GitHub URL** — Confirm `https://github.com/sandeep194920` is correct
 - [ ] **Founder page work history** — Add any additional full-time roles or freelance engagements to the experience section
 - [ ] **SaveNShare live link** — Update footer and apps page with real URL once launched
-- [ ] **Thinky live link** — Update once launched on App Store / web
 
 ## SEO & metadata
 
@@ -46,4 +44,4 @@
 
 - [ ] **Blog** — Add `/blog` page for articles/updates (good for SEO)
 - [ ] **Privacy Policy / Terms** — Add if collecting form data or email addresses
-- [ ] **waitlist page for native apps** — If you want a separate waitlist capture for SaveNShare / Thinky iOS launches
+- [ ] **waitlist page for native apps** — If you want a separate waitlist capture for SaveNShare's launch
